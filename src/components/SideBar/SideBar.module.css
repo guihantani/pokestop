@@ -1,7 +1,7 @@
 .sidebar{
     background-color: var(--orange);
     height: 100vh;
-    width: 30vw;
+    width: 27vw;
     position: sticky;
     z-index: 1;
     top: 0;
