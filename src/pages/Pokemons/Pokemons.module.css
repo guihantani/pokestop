@@ -1,4 +1,10 @@
 .container{
     display: flex;
-    flex-direction: row;
+    flex-direction: row;   
+}
+
+.content__container{
+    width: 100;
+    margin: auto;
+    padding: 60px 0;
 }
