@@ -5,19 +5,19 @@ import Product from '../Product/Product'
 function ProductsContainer({category}) {
   return (
     <section className={styles.productsContainer}>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
     </section>
   )
 }
