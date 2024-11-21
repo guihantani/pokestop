@@ -1,0 +1,7 @@
+{
+    "id": 0,
+    "name": "Pikachu",
+    "price": "100",
+    "category": "pokemon",
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+}

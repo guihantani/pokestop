@@ -4,7 +4,9 @@ import { NavLink } from 'react-router-dom'
 
 function SideBar() {
 
-    const setFocus = React.useCallback(() => {document.getElementById("search").focus();})
+    const setFocus = React.useCallback(() => {
+        document.getElementById("search").focus();
+    })
 
     return (
         <div className={styles.sidebar}>

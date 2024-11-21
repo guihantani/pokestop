@@ -10,8 +10,8 @@
 
 :root {
   font-family: 'Oxygen', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #242424;
-  color: white;
+  background-color: #f6f6f6;
+  color: black;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
