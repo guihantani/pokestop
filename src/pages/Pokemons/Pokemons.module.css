@@ -4,7 +4,12 @@
 }
 
 .content__container{
-    width: 100;
     margin: auto;
     padding: 60px 0;
+}
+
+.content__container h1{
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 16px;
 }

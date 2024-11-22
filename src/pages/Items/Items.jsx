@@ -8,7 +8,8 @@ function Items() {
     <div className={styles.container}>
       <SideBar/>
       <div className={styles.content__container}>
-        <ProductsContainer category={'pokemon'}/>
+        <h1>Items</h1>
+        <ProductsContainer category={'items'}/>
       </div>
     </div>
   )

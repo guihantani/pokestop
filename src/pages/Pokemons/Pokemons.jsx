@@ -9,6 +9,7 @@ function Pokemons() {
     <div className={styles.container}>
       <SideBar/>
       <div className={styles.content__container}>
+        <h1>Pokemons</h1>
         <ProductsContainer category={'pokemon'}/>
       </div>
     </div>
