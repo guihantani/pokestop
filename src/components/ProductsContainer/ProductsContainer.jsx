@@ -5,7 +5,6 @@ import { ProductContext } from '../../context/ProductContext'
 
 function ProductsContainer({category}) {
   const {products} = useContext(ProductContext)
-
   const filteredProducts = products.filter(function(product){return product.category === category})
 
   let conditionalContainer;
@@ -19,7 +18,7 @@ function ProductsContainer({category}) {
       <>
         <h1>{category}</h1>
         <div className={styles.productsContainer}>
-            {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={'/'}/>)}
+            {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)}
         </div>
       </>
     )
