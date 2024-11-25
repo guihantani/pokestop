@@ -1,23 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './ProductsContainer.module.css'
 import Product from '../Product/Product'
+import { ProductContext } from '../../context/ProductContext'
 
 function ProductsContainer({category}) {
+  const {products} = useContext(ProductContext)
+
+  const filteredProducts = products.filter(function(product){return product.category === category})
+
+  console.log(filteredProducts)
+
   return (
     <section className={styles.productsContainer}>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
-        <Product name={'Pikachu'} price={'100.00'} image={'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png'} page={'/'}/>
+        {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={'/'}/>)}
     </section>
   )
 }

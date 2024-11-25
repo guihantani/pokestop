@@ -1,7 +1,53 @@
 {
-    "id": 0,
-    "name": "Pikachu",
-    "price": "100",
-    "category": "pokemon",
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+    "products": [
+        {
+            "id": 0,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 1,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 2,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 3,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 4,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 5,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        },
+        {
+            "id": 6,
+            "name": "Pikachu",
+            "price": "100.00",
+            "category": "pokemon",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+        }
+    ]
 }
