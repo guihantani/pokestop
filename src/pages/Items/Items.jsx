@@ -7,10 +7,7 @@ function Items() {
   return (
     <div className={styles.container}>
       <SideBar/>
-      <div className={styles.content__container}>
-        <h1>Items</h1>
-        <ProductsContainer category={'items'}/>
-      </div>
+      <ProductsContainer category={'items'}/>
     </div>
   )
 }

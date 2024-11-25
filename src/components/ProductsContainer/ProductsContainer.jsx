@@ -8,11 +8,26 @@ function ProductsContainer({category}) {
 
   const filteredProducts = products.filter(function(product){return product.category === category})
 
-  console.log(filteredProducts)
+  let conditionalContainer;
+
+
+  if(filteredProducts.length == 0){
+    conditionalContainer = <h1 className={styles.emptyStock__text}>Sem Disponibilidade</h1>;
+  }
+  else{
+    conditionalContainer = (
+      <>
+        <h1>{category}</h1>
+        <div className={styles.productsContainer}>
+            {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={'/'}/>)}
+        </div>
+      </>
+    )
+  }
 
   return (
-    <section className={styles.productsContainer}>
-        {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={'/'}/>)}
+    <section className={styles.products}>
+      {conditionalContainer}
     </section>
   )
 }

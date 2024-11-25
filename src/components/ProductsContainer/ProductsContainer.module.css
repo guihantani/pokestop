@@ -1,6 +1,26 @@
+.products{
+    padding: 60px 0;
+    margin: auto;
+}
+
+.products h1{
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 16px;
+    text-transform: capitalize;
+}
+
+.emptyStock__text{
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 16px;
+    color: #808080;
+}
+
 .productsContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 8px;
     width: 941px;
 }
+
