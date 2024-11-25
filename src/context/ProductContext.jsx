@@ -3,14 +3,21 @@ import axios from 'axios';
 
 export const ProductContext = createContext();
 
+const APIAdress = 'http://localhost:8000/products';
+
 export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() =>{
-        axios.get('http://localhost:8000/products')
-            .then(response => {
-                setProducts(response.data)
-            })
+        const getData = async ()=>{
+            try{
+                const response = await axios.get(APIAdress);
+                setProducts(response.data);
+            } catch(error){
+                console.log(error);
+            }
+        }
+        getData();
     },[])
 
     return(
