@@ -9,45 +9,52 @@
         },
         {
             "id": 1,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Bulbasaur",
+            "price": "90.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
         },
         {
             "id": 2,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Charmander",
+            "price": "90.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
         },
         {
             "id": 3,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Squirtle",
+            "price": "90.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png"
         },
         {
             "id": 4,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Eevee",
+            "price": "60.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png"
         },
         {
             "id": 5,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Ditto",
+            "price": "150.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
         },
         {
             "id": 6,
-            "name": "Pikachu",
-            "price": "100.00",
+            "name": "Togepi",
+            "price": "50.00",
             "category": "pokemon",
-            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png"
+        },
+        {
+            "id": 7,
+            "name": "PokeBall",
+            "price": "10.00",
+            "category": "item",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png"
         }
     ]
 }
