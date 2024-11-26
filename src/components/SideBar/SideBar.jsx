@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './SideBar.module.css'
 import { NavLink } from 'react-router-dom'
+import { ProductContext } from '../../context/ProductContext'
 
 function SideBar() {
+    const {categories} = useContext(ProductContext)
 
     const setFocus = React.useCallback(() => {
         document.getElementById("search").focus();
     })
+    
 
     return (
         <div className={styles.sidebar}>
@@ -16,8 +19,7 @@ function SideBar() {
                 <input type="text" id="search" name="search"></input>
             </div>
             <div className={styles.container__items}>
-                <NavLink className={({ isActive }) => { if (isActive) return(styles.active)}} to={'/pokemons'}>Pokemons</NavLink>
-                <NavLink className={({ isActive }) => { if (isActive) return(styles.active)}} to={'/items'}>Items</NavLink>
+                {categories.map((category) => <NavLink key={category.id} className={({ isActive }) => { if (isActive) return(styles.active)}} to={`/${category.name}s`}>{`${category.name}s`}</NavLink>)}
             </div>
         </div>
     )

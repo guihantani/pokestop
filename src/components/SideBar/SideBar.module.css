@@ -46,6 +46,7 @@
 .container__items a{
     background-color: var(--orange);
     text-decoration: none;
+    text-transform: capitalize;
     color: #ffb357;
     font-size: 22px;
     font-weight: 100;

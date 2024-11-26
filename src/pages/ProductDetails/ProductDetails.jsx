@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import { ProductContext } from '../../context/ProductContext';
+import NotFound from '../NotFound/NotFound';
 
 function ProductDetails() {
     const productNameContainer = useParams();
@@ -11,7 +12,7 @@ function ProductDetails() {
     let PageContent;
 
     if(filteredProduct == null){
-        PageContent = <h1>Product Not Found!</h1>
+        PageContent = <NotFound/>
     }
     else{
         PageContent = (

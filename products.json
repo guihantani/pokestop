@@ -1,4 +1,21 @@
 {
+    "categories": [
+        {
+            "id": 0,
+            "name": "pokemon",
+            "route": "pokemons"
+        },
+        {
+            "id": 1,
+            "name": "item",
+            "route": "items"
+        },
+        {
+            "id": 2,
+            "name": "badge",
+            "route": "badges"            
+        }
+    ],
     "products": [
         {
             "id": 0,
