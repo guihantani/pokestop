@@ -5,8 +5,7 @@ import SideBar from '../../components/SideBar/SideBar'
 function Home() {
   return (
     <>
-      <a href={'/pokemons'}>Pokemons</a>
-      <a href={'/items'}>Items</a>
+      <a href={'/allproducts'}>All Products</a>
     </>
   )
 }
