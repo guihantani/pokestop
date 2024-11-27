@@ -8,18 +8,18 @@ import NotFound from '../NotFound/NotFound';
 
 function Products() {
   const productPageNameContainer = useParams();
-  const {categories, isLoadingCategories} = useContext(ProductContext)
+  const {categories, isLoadingCategories, isLoadingProducts} = useContext(ProductContext)
   const filteredCategory = categories.find(function(category){
       return category.route === productPageNameContainer.productPage
   })
 
   let PageContent;
 
-  if(isLoadingCategories){
+  if(isLoadingCategories || isLoadingProducts){
     PageContent = <h1>Loading...</h1>
   }
 
-  if(productPageNameContainer.productPage == 'allproducts' && isLoadingCategories == false){
+  if(productPageNameContainer.productPage == 'allproducts' && isLoadingCategories == false && isLoadingProducts == false){
     PageContent = (
       <div className={styles.container}>
         <SideBar/>
@@ -27,10 +27,10 @@ function Products() {
       </div>
     )
   }
-  else if(filteredCategory == null && isLoadingCategories == false){
+  else if(filteredCategory == null && isLoadingCategories == false && isLoadingProducts == false){
       PageContent = <NotFound/>
   }
-  else if(filteredCategory != null && isLoadingCategories == false){
+  else if(filteredCategory != null && isLoadingCategories == false && isLoadingProducts == false){
       PageContent = (
         <div className={styles.container}>
           <SideBar/>
