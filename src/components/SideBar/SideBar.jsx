@@ -19,6 +19,7 @@ function SideBar() {
                 <input type="text" id="search" name="search"></input>
             </div>
             <div className={styles.container__items}>
+                <NavLink className={({ isActive }) => { if (isActive) return(styles.active)}} to={`/allproducts`}>All Products</NavLink>
                 {categories.map((category) => <NavLink key={category.id} className={({ isActive }) => { if (isActive) return(styles.active)}} to={`/${category.name}s`}>{`${category.name}s`}</NavLink>)}
             </div>
         </div>

@@ -13,14 +13,21 @@ function Products() {
       return category.route === productPageNameContainer.productPage
   })
 
-  console.log(filteredCategory)
   let PageContent;
 
   if(isLoadingCategories){
     PageContent = <h1>Loading...</h1>
   }
 
-  if(filteredCategory == null && isLoadingCategories == false){
+  if(productPageNameContainer.productPage == 'allproducts' && isLoadingCategories == false){
+    PageContent = (
+      <div className={styles.container}>
+        <SideBar/>
+        <ProductsContainer category='allproducts'/>
+      </div>
+    )
+  }
+  else if(filteredCategory == null && isLoadingCategories == false){
       PageContent = <NotFound/>
   }
   else if(filteredCategory != null && isLoadingCategories == false){

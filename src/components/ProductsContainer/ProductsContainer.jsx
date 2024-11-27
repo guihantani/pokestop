@@ -9,8 +9,17 @@ function ProductsContainer({category}) {
 
   let conditionalContainer;
 
-
-  if(filteredProducts.length == 0){
+  if(category == 'allproducts'){
+    conditionalContainer = (  
+      <>
+          <h1>All Products</h1>
+          <div className={styles.productsContainer}>
+              {products.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)}
+          </div>
+      </>
+    )
+  }
+  else if(filteredProducts.length == 0){
     conditionalContainer = <h1 className={styles.emptyStock__text}>Sem Disponibilidade</h1>;
   }
   else{
