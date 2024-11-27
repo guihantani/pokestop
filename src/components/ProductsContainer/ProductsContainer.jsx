@@ -14,7 +14,7 @@ function ProductsContainer({category}) {
       <>
           <h1>All Products</h1>
           <div className={styles.productsContainer}>
-              {products.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)}
+              {products.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}/${product.name}`}/>)}
           </div>
       </>
     )
