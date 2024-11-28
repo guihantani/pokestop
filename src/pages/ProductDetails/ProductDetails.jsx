@@ -19,10 +19,15 @@ function ProductDetails() {
     else{
         PageContent = (
             <section className={styles.productDetails}>
-                <div>
-                    <h1>{filteredProduct.name}</h1>
-                    <h1>{filteredProduct.price}</h1>
-                    <img src={filteredProduct.image}/>
+                <div className={styles.product__info}>
+                    <div className={styles.product__title}>
+                        <h1>{filteredProduct.name}</h1>
+                        <h2>{filteredProduct.category}</h2>
+                    </div>
+                    <div className={styles.image__container}>
+                        <img src={filteredProduct.image}/>
+                    </div>
+                    <p>{filteredProduct.description}</p>
                 </div>
                 <PurchaseSideBar price={filteredProduct.price}/>
             </section>
