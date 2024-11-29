@@ -20,7 +20,7 @@ function ProductsContainer({category}) {
     )
   }
   else if(filteredProducts.length == 0){
-    conditionalContainer = <h1 className={styles.emptyStock__text}>Sem Disponibilidade</h1>;
+    conditionalContainer = <h1 className={styles.emptyStock__text}>No Stock Available</h1>;
   }
   else{
     conditionalContainer = (
