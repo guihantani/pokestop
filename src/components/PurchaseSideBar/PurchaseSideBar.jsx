@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from './PurchaseSideBar.module.css'
+import {NumberField, Label, Group, Input, Button} from 'react-aria-components';
 
 function PurchaseSideBar({price}) {
     return (
@@ -8,6 +9,15 @@ function PurchaseSideBar({price}) {
                 <div className={styles.price__container}>
                     <h6>R$</h6>
                     <p>{price}</p>
+                </div>
+                <div className={styles.numberStepper}>
+                <NumberField defaultValue={1} minValue={1} maxValue={99} className={styles.quantity}>
+                    <Group className={styles.quantity__content}>
+                        <Button slot="decrement" className={styles.button__decrement}>-</Button>
+                        <Input />
+                        <Button slot="increment" className={styles.button_increment}>+</Button>
+                    </Group>
+                </NumberField>
                 </div>
                 <button className={styles.button}>Add to Cart</button>
             </div>
