@@ -1,12 +1,28 @@
 import React from 'react'
 import styles from './Home.module.css'
-import SideBar from '../../components/SideBar/SideBar'
+import {Button} from 'react-aria-components';
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  function handleClick() {
+    navigate('/allproducts');
+  }
+
   return (
-    <>
-      <a href={'/allproducts'}>All Products</a>
-    </>
+    <section className={styles.home}>
+      <div className={styles.container}>
+        <div className={styles.vignette}>
+        </div>
+        <div className={styles.upper__screen}>
+          <h1>PokeStop</h1>
+        </div>
+        <div className={styles.bottom__screen}>
+          <Button className={styles.button} onPress={() => handleClick()}>Press me</Button>
+        </div>
+      </div>
+    </section>
   )
 }
 
