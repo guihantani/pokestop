@@ -9,17 +9,17 @@
 .vignette{
     position: fixed;
     height: 90%;
-    width: 90%;
+    width: 85%;
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;	
-	z-index: 10000;
+	z-index: 99;
     margin: auto;
 }
 
 .container{
     height: 90%;
-    width: 90%;
+    width: 85%;
     background-color: white;
     margin: auto;
 }
@@ -70,4 +70,15 @@
 
 .button:hover {
     transform: scale(1.1);
+}
+
+.sound__button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: transparent;
+    border: none;
+    margin: 1vw 2vw;
+    text-decoration: none;
 }
