@@ -19,7 +19,7 @@ function Home() {
           <h1>PokeStop</h1>
         </div>
         <div className={styles.bottom__screen}>
-          <Button className={styles.button} onPress={() => handleClick()}>Press me</Button>
+          <Button className={styles.button} onPress={() => handleClick()}>Enter Store</Button>
         </div>
       </div>
     </section>
