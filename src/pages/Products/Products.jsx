@@ -2,9 +2,8 @@ import React, { useContext } from 'react'
 import SideBar from '../../components/SideBar/SideBar'
 import styles from './Products.module.css'
 import ProductsContainer from '../../components/ProductsContainer/ProductsContainer'
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { ProductContext } from '../../context/ProductContext';
-import NotFound from '../NotFound/NotFound';
 
 function Products() {
   const productPageNameContainer = useParams();
@@ -28,7 +27,7 @@ function Products() {
     )
   }
   else if(filteredCategory == null && isLoadingCategories == false && isLoadingProducts == false){
-      PageContent = <NotFound/>
+      PageContent = <Navigate to="/notfound" replace />
   }
   else if(filteredCategory != null && isLoadingCategories == false && isLoadingProducts == false){
       PageContent = (

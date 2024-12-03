@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
-import { useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import { ProductContext } from '../../context/ProductContext';
-import NotFound from '../NotFound/NotFound';
 import PurchaseSideBar from '../../components/PurchaseSideBar/PurchaseSideBar';
 import styles from './ProductDetails.module.css'
 
@@ -14,7 +13,7 @@ function ProductDetails() {
     let PageContent;
 
     if(filteredProduct == null){
-        PageContent = <NotFound/>
+        PageContent = <Navigate to="/notfound" replace />
     }
     else{
         PageContent = (

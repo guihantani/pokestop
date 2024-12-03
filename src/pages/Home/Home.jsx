@@ -10,30 +10,8 @@ function Home() {
     navigate('/allproducts');
   }
 
-  function handleSoundButtonClick() {
-    let audio, img;
-    audio = document.getElementById("backgroundAudio");
-    img = document.getElementById("sound__button__icon");
-    
-    if(!audio.paused){
-      img.src = '/images/sound-mute.svg';
-      audio.pause();
-    }
-    else if(audio.paused){
-      img.src = '/images/sound-on.svg'
-      audio.play();
-    }
-  }
-
-  React.useEffect(() => {
-    document.getElementById("backgroundAudio").volume = 0.3;
-  })
-
   return (
     <>
-      <audio id='backgroundAudio' src='/sounds/homemusic.mp3'>
-        <p>Audio not supported</p>
-      </audio>
       <section className={styles.home}>
         <div className={styles.container}>
           <div className={styles.vignette}>
@@ -46,9 +24,6 @@ function Home() {
           </div>
         </div>
       </section>
-      <button id='sound__button' className={styles.sound__button} onClick={() => handleSoundButtonClick()}>
-        <img id='sound__button__icon' src='/images/sound-mute.svg' height={'30px'}/>
-      </button>
     </>
   )
 }
