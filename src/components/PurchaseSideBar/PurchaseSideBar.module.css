@@ -38,6 +38,11 @@
     font-weight: 500;
 }
 
+.available__container{
+    text-align: end;
+    font-weight: 500;
+}
+
 .quantity{
     display: flex;
     justify-content: end;

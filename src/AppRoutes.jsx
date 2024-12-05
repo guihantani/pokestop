@@ -9,7 +9,6 @@ import Products from './pages/Products/Products'
 import SoundButton from './components/SoundButton/SoundButton'
 
 function AppRoutes() {
-
   return (
     <BrowserRouter>
       <ProductProvider>

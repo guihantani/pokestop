@@ -28,7 +28,7 @@ function ProductDetails() {
                     </div>
                     <p>{filteredProduct.description}</p>
                 </div>
-                <PurchaseSideBar price={filteredProduct.price}/>
+                <PurchaseSideBar product={filteredProduct}/>
             </section>
         )
     }

@@ -22,6 +22,7 @@
             "name": "Pikachu",
             "price": "100.00",
             "category": "pokemon",
+            "quantity": 10,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -30,6 +31,7 @@
             "name": "Bulbasaur",
             "price": "90.00",
             "category": "pokemon",
+            "quantity": 9,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -38,6 +40,7 @@
             "name": "Charmander",
             "price": "90.00",
             "category": "pokemon",
+            "quantity": 8,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -46,6 +49,7 @@
             "name": "Squirtle",
             "price": "90.00",
             "category": "pokemon",
+            "quantity": 7,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -54,6 +58,7 @@
             "name": "Eevee",
             "price": "60.00",
             "category": "pokemon",
+            "quantity": 6,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/133.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -62,6 +67,7 @@
             "name": "Ditto",
             "price": "150.00",
             "category": "pokemon",
+            "quantity": 5,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -70,6 +76,7 @@
             "name": "Togepi",
             "price": "50.00",
             "category": "pokemon",
+            "quantity": 4,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/175.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         },
@@ -78,6 +85,7 @@
             "name": "PokeBall",
             "price": "10.00",
             "category": "item",
+            "quantity": 97,
             "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/poke-ball.png",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed justo augue. Nunc eleifend ultricies urna non interdum. Morbi eget enim sed libero lacinia volutpat quis id justo. Nam non fringilla risus. Mauris pellentesque elit et ipsum cursus, et venenatis dolor dignissim. Nam sit amet blandit odio. Proin vehicula tristique tincidunt. Donec vehicula imperdiet metus ac consectetur. Donec ut risus dignissim, aliquam velit vitae, aliquam urna. Donec vestibulum, tortor vel posuere malesuada, purus ipsum lobortis quam, ac tristique eros diam ac neque. Nunc viverra, tellus et semper hendrerit, lacus lacus rhoncus diam, et dignissim dui sem sed ipsum. Suspendisse quis ipsum arcu."
         }
