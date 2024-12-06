@@ -1,0 +1,24 @@
+.button__container{
+    position: fixed;
+    right: 6vw;
+    top: 50px;
+}
+
+.shoppingCartButton{
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    margin-right: 0;
+}
+
+.cart__icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    padding: 5px 5px;
+    border: solid 2px var(--orange);
+    border-radius: 50%;
+}

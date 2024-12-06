@@ -1,0 +1,35 @@
+
+.productMiniature{
+    display: flex;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 50%);
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.image__container{
+    width: 100px;
+    height: 100px;
+}
+
+.image__container img{
+    width: 100px;
+    height: 100px;
+}
+
+.price__container{
+    display: flex;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.price__container h6{
+    line-height: 150%;
+}
+
+.content{
+    color: black;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+}

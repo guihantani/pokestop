@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import styles from './ProductsContainer.module.css'
 import Product from '../Product/Product'
 import { ProductContext } from '../../context/ProductContext'
+import ShoppingCartButton from '../ShoppingCartButton/ShoppingCartButton'
 
 function ProductsContainer({category}) {
   const {products} = useContext(ProductContext)
@@ -35,6 +36,7 @@ function ProductsContainer({category}) {
 
   return (
     <section className={styles.products}>
+      <ShoppingCartButton/>
       {conditionalContainer}
     </section>
   )
