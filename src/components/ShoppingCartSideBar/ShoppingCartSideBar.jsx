@@ -1,8 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './ShoppingCartSideBar.module.css'
 import ProductMiniature from './ProductMiniature/ProductMiniature'
+import { ShoppingCartContext } from '../../context/ShoppingCartContext'
+import { ProductContext } from '../../context/ProductContext'
 
 function ShoppingCartSideBar({isOpen, closeSidebar}) {
+    const {cartProducts} = useContext(ShoppingCartContext)
+
+    let productsRender;
 
     useEffect(() => {
         if(isOpen){
@@ -21,8 +26,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
                 </button>
             </div>
             <div className={styles.products__container}>
-                <ProductMiniature name={'Pikachu'} price={'100.00'} quantity={10} image={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"}/>
-                <ProductMiniature name={'Pikachu'} price={'100.00'} quantity={9} image={"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"}/>
+                {cartProducts.map((product) => <ProductMiniature key={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
             </div>
         </div>
   )

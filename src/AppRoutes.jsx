@@ -7,11 +7,13 @@ import { ProductProvider } from './context/ProductContext'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
 import Products from './pages/Products/Products'
 import SoundButton from './components/SoundButton/SoundButton'
+import { ShoppingCartProvider } from './context/ShoppingCartContext'
 
 function AppRoutes() {
   return (
     <BrowserRouter>
       <ProductProvider>
+        <ShoppingCartProvider>
           <SoundButton music={'/sounds/shopmusic.mp3'}/>
           <Routes>
               <Route index element={<Home/>}></Route>
@@ -21,6 +23,7 @@ function AppRoutes() {
               <Route path='/notfound' element={<NotFound/>}></Route>
               <Route path='*' element={<Navigate to="/notfound" replace />}></Route>
           </Routes>
+        </ShoppingCartProvider>
       </ProductProvider>
     </BrowserRouter>
   )

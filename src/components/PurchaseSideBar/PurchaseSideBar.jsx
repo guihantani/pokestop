@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './PurchaseSideBar.module.css'
 import {NumberField, Group, Input, Button} from 'react-aria-components';
+import { ShoppingCartContext, useShoppingCartContext } from '../../context/ShoppingCartContext';
+import { useNavigate } from 'react-router-dom';
 
 function PurchaseSideBar({product}) {
+    const navigate = useNavigate();
+    const {addToCart} = useShoppingCartContext();
+    const [inputValue, setInputValue] = useState(1);
+    const {cartProducts} = useContext(ShoppingCartContext)
+
+    function CartButtonClick(){
+        const productCopy = structuredClone(product);
+        addToCart(productCopy, inputValue);
+        navigate('/allproducts');
+    }
+
     return (
         <div className={styles.purchaseSideBar}>
             <div className={styles.content}>
@@ -14,7 +27,7 @@ function PurchaseSideBar({product}) {
                     <p>{`Available: ${product.quantity}`}</p>
                 </div>
                 <div className={styles.numberStepper}>
-                    <NumberField aria-label='quantity field' defaultValue={1} minValue={1} maxValue={product.quantity} className={styles.quantity}>
+                    <NumberField aria-label='quantity field' defaultValue={1} minValue={1} onChange={setInputValue} maxValue={product.quantity} className={styles.quantity}>
                         <Group aria-label='quantity group' className={styles.quantity__content}>
                             <Button slot="decrement" className={styles.button__decrement}>-</Button>
                             <Input />
@@ -22,7 +35,9 @@ function PurchaseSideBar({product}) {
                         </Group>
                     </NumberField>
                 </div>
-                <button className={styles.button}>Add to Cart</button>
+                <button className={styles.button} onClick={() => CartButtonClick()}>Add to Cart</button>
+                <button className={styles.button} onClick={() => console.log(cartProducts)}>console log</button>
+                <button className={styles.button} onClick={() => console.log(inputValue)}>Value</button>
             </div>
         </div>
     )
