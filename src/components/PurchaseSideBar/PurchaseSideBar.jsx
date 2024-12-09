@@ -36,8 +36,6 @@ function PurchaseSideBar({product}) {
                     </NumberField>
                 </div>
                 <button className={styles.button} onClick={() => CartButtonClick()}>Add to Cart</button>
-                <button className={styles.button} onClick={() => console.log(cartProducts)}>console log</button>
-                <button className={styles.button} onClick={() => console.log(inputValue)}>Value</button>
             </div>
         </div>
     )
