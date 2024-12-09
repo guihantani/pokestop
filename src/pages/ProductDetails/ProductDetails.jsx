@@ -6,13 +6,16 @@ import styles from './ProductDetails.module.css'
 
 function ProductDetails() {
     const productNameContainer = useParams();
-    const {products} = useContext(ProductContext)
+    const {products, isLoadingCategories, isLoadingProducts } = useContext(ProductContext)
     const filteredProduct = products.find(function(product){
         return product.name === productNameContainer.productName
     })
     let PageContent;
 
-    if(filteredProduct == null){
+    if(isLoadingCategories || isLoadingProducts){
+        PageContent = <h1>Loading...</h1>
+    }
+    else if(filteredProduct == null  && isLoadingCategories == false && isLoadingProducts == false){
         PageContent = <Navigate to="/notfound" replace />
     }
     else{

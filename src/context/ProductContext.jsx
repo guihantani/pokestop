@@ -8,8 +8,8 @@ const APIAdress = 'http://localhost:8000';
 export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
-    const [isLoadingProducts, setIsLoadingProducts] = useState(false);
-    const [isLoadingCategories, setIsLoadingCategories] = useState(false);
+    const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+    const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
 
     useEffect(() =>{
