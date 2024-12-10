@@ -1,9 +1,13 @@
 import React from 'react'
 import styles from './ProductMiniature.module.css'
+import { useShoppingCartContext } from '../../../context/ShoppingCartContext';
 
 function ProductMiniature({name, image, price, quantity}) {
+    const {deleteFromCart} = useShoppingCartContext();
+
     let convertedPrice = Number(price);
     let totalPrice = (convertedPrice * quantity).toFixed(2);
+
 
     return (
         <div className={styles.productMiniature}>
@@ -11,13 +15,15 @@ function ProductMiniature({name, image, price, quantity}) {
                 <img src={image}/>
             </div>
             <div className={styles.content}>
-                <p>{name}</p>
+                <p>{`x${quantity} ${name}`}</p>
                 <div className={styles.price__container}>
                     <h6>R$</h6>
                     <p>{totalPrice}</p>
                 </div>
-                <p>{`Quantity: ${quantity}`}</p>
             </div>
+            <button className={styles.deleteButton} onClick={() => deleteFromCart(name)}>
+                    <img src='/images/trash.svg'/>
+            </button>
         </div>
     )
 }
