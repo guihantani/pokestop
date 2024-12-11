@@ -45,8 +45,14 @@ export function useShoppingCartContext(){
         setCartProducts(cartProducts => cartProducts.filter(product => product.name !== productToRemoveName))
     }
 
+    function clearCart(){
+        setCartProducts([])
+        alert('Thank you for your Purchase! :)')
+    }
+
    return{
         addToCart,
         deleteFromCart,
+        clearCart,
     }
 }
