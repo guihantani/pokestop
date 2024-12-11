@@ -17,6 +17,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding-bottom: 40px;
 }
 
 .button__container{
@@ -29,4 +30,25 @@
 .button__container button{
     border: none;
     background-color: transparent;
+}
+
+.purchase__button {
+    background-color: var(--orange);
+    border-radius: 5px;
+    border: none;
+    color: #F6F6F6;
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 300;
+    height: 70px;
+    width: 100%;
+    padding: 10px 16px;
+    transition: all 0.1s ease-in-out;
+}
+  
+.purchase__button:hover{
+    background-color: #F6F6F6;
+    color: var(--orange);
+    border: solid 2px;
+    transition: all 0.1s ease-in-out;
 }

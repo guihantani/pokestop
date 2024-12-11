@@ -1,13 +1,11 @@
 import React, { useContext, useEffect } from 'react'
 import styles from './ShoppingCartSideBar.module.css'
 import ProductMiniature from './ProductMiniature/ProductMiniature'
-import { ShoppingCartContext } from '../../context/ShoppingCartContext'
-import { ProductContext } from '../../context/ProductContext'
+import { ShoppingCartContext, useShoppingCartContext } from '../../context/ShoppingCartContext'
 
 function ShoppingCartSideBar({isOpen, closeSidebar}) {
     const {cartProducts} = useContext(ShoppingCartContext)
-
-    let productsRender;
+    const {clearCart} = useShoppingCartContext();
 
     useEffect(() => {
         if(isOpen){
@@ -15,6 +13,10 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
         }
         else if(!isOpen){
             document.getElementById('shoppingCartSideBar').style.transform = 'translateX(350px)'
+        }
+
+        if(cartProducts.length == 0){
+            document.getElementById('purchase__button').style.display = 'none'
         }
     })
 
@@ -28,6 +30,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
             <div className={styles.products__container}>
                 {cartProducts.map((product) => <ProductMiniature key={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
             </div>
+            <button id={'purchase__button'} className={styles.purchase__button} onClick={() => clearCart()}>Finish Purchase</button>
         </div>
   )
 }
