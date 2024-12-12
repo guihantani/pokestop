@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './ProductMiniature.module.css'
 import { useShoppingCartContext } from '../../../context/ShoppingCartContext';
+import { Button, Group, Input, NumberField } from 'react-aria-components';
+import { ProductContext } from '../../../context/ProductContext';
 
 function ProductMiniature({name, image, price, quantity}) {
-    const {deleteFromCart} = useShoppingCartContext();
+    const {deleteFromCart, updateCartProduct} = useShoppingCartContext();
+    const {products} = useContext(ProductContext);
+    const [inputValue, setInputValue] = useState(quantity);
 
-    let convertedPrice = Number(price);
-    let totalPrice = (convertedPrice * quantity).toFixed(2);
-
+    const defaultProduct = products.find((product) => product.name == name);
 
     return (
         <div className={styles.productMiniature}>
@@ -15,10 +17,20 @@ function ProductMiniature({name, image, price, quantity}) {
                 <img src={image}/>
             </div>
             <div className={styles.content}>
-                <p>{`x${quantity} ${name}`}</p>
+                <p>{`x${inputValue} ${name}`}</p>
                 <div className={styles.price__container}>
                     <h6>R$</h6>
-                    <p>{totalPrice}</p>
+                    <p>{(Number(price) * inputValue).toFixed(2)}</p>
+                </div>
+                <div className={styles.numberStepper}>
+                    <NumberField aria-label='quantity field' defaultValue={inputValue} minValue={1} onChange={setInputValue} 
+                        maxValue={defaultProduct.quantity} className={styles.quantity}>
+                        <Group aria-label='quantity group' className={styles.quantity__content}>
+                            <Button slot="decrement" className={styles.button__decrement}>-</Button>
+                            <Input />
+                            <Button slot="increment" className={styles.button_increment}>+</Button>
+                        </Group>
+                    </NumberField>
                 </div>
             </div>
             <button className={styles.deleteButton} onClick={() => deleteFromCart(name)}>
