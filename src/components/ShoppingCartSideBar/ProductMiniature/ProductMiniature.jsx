@@ -23,7 +23,10 @@ function ProductMiniature({name, image, price, quantity}) {
                     <p>{(Number(price) * inputValue).toFixed(2)}</p>
                 </div>
                 <div className={styles.numberStepper}>
-                    <NumberField aria-label='quantity field' defaultValue={inputValue} minValue={1} onChange={setInputValue} 
+                    <NumberField aria-label='quantity field' value={inputValue} minValue={1} onChange={(value) => {
+                        setInputValue(value);
+                        updateCartProduct(name, value);
+                    }} 
                         maxValue={defaultProduct.quantity} className={styles.quantity}>
                         <Group aria-label='quantity group' className={styles.quantity__content}>
                             <Button slot="decrement" className={styles.button__decrement}>-</Button>

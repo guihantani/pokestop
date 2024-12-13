@@ -50,9 +50,30 @@ export function useShoppingCartContext(){
         alert('Thank you for your Purchase! :)')
     }
 
+    function updateCartProduct(productName, productQuantity){
+        console.log(productQuantity)
+        const productIndex = cartProducts.findIndex((product) => product.name == productName);
+
+        if (productIndex === -1) return;
+
+        const product = cartProducts[productIndex]
+        const updatedProduct = {
+            ...product,
+            quantity: productQuantity,
+        };
+
+        const updatedCart = [...cartProducts];
+        updatedCart[productIndex] = updatedProduct;
+
+        console.log(updatedCart)
+
+        setCartProducts(updatedCart);
+    }
+
    return{
         addToCart,
         deleteFromCart,
         clearCart,
+        updateCartProduct,
     }
 }
