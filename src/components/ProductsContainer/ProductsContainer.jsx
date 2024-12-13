@@ -10,13 +10,13 @@ function ProductsContainer({category}) {
   let filteredProducts;
   let categoryTitle = category;
   if(category == 'allproducts'){
+    categoryTitle = 'All Products'
     filteredProducts = products.filter((product) =>{
       if (
         product.name.toLowerCase().includes(search)
       ) {
-        categoryTitle = 'All Products'
         return product;
-      }    
+      }      
     })
   }
   else{
