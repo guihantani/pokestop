@@ -114,3 +114,17 @@
     border: solid 2px;
     transition: all 0.1s ease-in-out;
 }
+
+.outOfStock__button{
+    background-color: #F6F6F6;
+    border-radius: 5px;
+    border: solid 2px;
+    color: var(--orange);
+    cursor: pointer;
+    font-size: 35px;
+    font-weight: 300;
+    height: 70px;
+    width: 100%;
+    padding: 10px 16px;
+    transition: all 0.1s ease-in-out;
+}

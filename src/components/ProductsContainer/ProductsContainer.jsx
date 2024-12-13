@@ -40,7 +40,14 @@ function ProductsContainer({category}) {
       <>
         <h1>{categoryTitle}</h1>
         <div className={styles.productsContainer}>
-            {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)}
+            {filteredProducts.map((product) =>{
+              if(product.quantity == 0){
+                return(<Product outOfStock key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)
+              }
+              else{
+                return(<Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)
+              }
+            })}
         </div>
       </>
     )

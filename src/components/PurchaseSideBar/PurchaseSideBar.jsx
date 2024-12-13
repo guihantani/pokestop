@@ -8,7 +8,6 @@ function PurchaseSideBar({product}) {
     const navigate = useNavigate();
     const {addToCart} = useShoppingCartContext();
     const [inputValue, setInputValue] = useState(1);
-    const {cartProducts} = useContext(ShoppingCartContext)
 
     function CartButtonClick(){
         const productCopy = structuredClone(product);
@@ -27,7 +26,7 @@ function PurchaseSideBar({product}) {
                     <p>{`Available: ${product.quantity}`}</p>
                 </div>
                 <div className={styles.numberStepper}>
-                    <NumberField aria-label='quantity field' defaultValue={1} minValue={1} onChange={setInputValue} maxValue={product.quantity} className={styles.quantity}>
+                    <NumberField aria-label='quantity field' defaultValue={product.quantity == 0 ? 0 : 1} minValue={product.quantity == 0 ? 0 : 1} onChange={setInputValue} maxValue={product.quantity} className={styles.quantity}>
                         <Group aria-label='quantity group' className={styles.quantity__content}>
                             <Button slot="decrement" className={styles.button__decrement}>-</Button>
                             <Input />
@@ -35,7 +34,10 @@ function PurchaseSideBar({product}) {
                         </Group>
                     </NumberField>
                 </div>
-                <button className={styles.button} onClick={() => CartButtonClick()}>Add to Cart</button>
+                {product.quantity == 0 ? 
+                    <button className={styles.outOfStock__button} disabled>Out Of Stock</button> : 
+                    <button className={styles.button} onClick={() => CartButtonClick()}>Add to Cart</button>
+                }
             </div>
         </div>
     )
