@@ -8,6 +8,7 @@ const APIAdress = 'http://localhost:8000';
 export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [search, setSearch] = useState('');
     const [isLoadingProducts, setIsLoadingProducts] = useState(true);
     const [isLoadingCategories, setIsLoadingCategories] = useState(true);
 
@@ -41,7 +42,7 @@ export const ProductProvider = ({children}) => {
     },[])
 
     return(
-        <ProductContext.Provider value={{products, setProducts, categories, setCategories, isLoadingProducts, isLoadingCategories}}>
+        <ProductContext.Provider value={{products, setProducts, categories, setCategories, isLoadingProducts, isLoadingCategories, search, setSearch}}>
             {children}
         </ProductContext.Provider>
     )

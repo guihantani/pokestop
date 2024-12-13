@@ -5,28 +5,40 @@ import { ProductContext } from '../../context/ProductContext'
 import ShoppingCartButton from '../ShoppingCartButton/ShoppingCartButton'
 
 function ProductsContainer({category}) {
-  const {products} = useContext(ProductContext)
-  const filteredProducts = products.filter(function(product){return product.category === category})
+  const {products, search} = useContext(ProductContext)
+  let categoryProducts;
+  let filteredProducts;
+  let categoryTitle = category;
+  if(category == 'allproducts'){
+    filteredProducts = products.filter((product) =>{
+      if (
+        product.name.toLowerCase().includes(search)
+      ) {
+        categoryTitle = 'All Products'
+        return product;
+      }    
+    })
+  }
+  else{
+    categoryProducts = products.filter(function(product){return product.category === category})
+    filteredProducts = categoryProducts.filter((product) =>{
+      if (
+        product.name.toLowerCase().includes(search)
+      ) {
+        return product;
+      }    
+    })
+  }
 
   let conditionalContainer;
 
-  if(category == 'allproducts'){
-    conditionalContainer = (  
-      <>
-          <h1>All Products</h1>
-          <div className={styles.productsContainer}>
-              {products.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}/${product.name}`}/>)}
-          </div>
-      </>
-    )
-  }
-  else if(filteredProducts.length == 0){
+  if(filteredProducts.length == 0){
     conditionalContainer = <h1 className={styles.emptyStock__text}>No Stock Available</h1>;
   }
   else{
     conditionalContainer = (
       <>
-        <h1>{category}</h1>
+        <h1>{categoryTitle}</h1>
         <div className={styles.productsContainer}>
             {filteredProducts.map((product) => <Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}s/${product.name}`}/>)}
         </div>
