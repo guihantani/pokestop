@@ -49,8 +49,32 @@ export const ProductProvider = ({children}) => {
 }
 
 export function useProductContext(){
+    const {products, setProducts} = useContext(ProductContext)
+    
+    function updateProductQuantity(productPurchased){
+        const originalProduct = products.find((product) => product.name == productPurchased.name);
+        const getData = async ()=>{
+            try{
+                await axios.put(`${APIAdress}/products/${productPurchased.id}`,{
+                    "id": productPurchased.id,
+                    "name": productPurchased.name,
+                    "price": productPurchased.price,
+                    "category": productPurchased.category,
+                    "quantity": originalProduct.quantity - productPurchased.quantity,
+                    "image": productPurchased.image,
+                    "description": productPurchased.description
+                })
+                .then(() => {
+                    setProducts(products.map(thisProduct => thisProduct.name === productPurchased.name ? productPurchased : thisProduct));
+                })
+            } catch(error){
+                console.log(error);
+            }
+        }
+        getData();
+    }
 
     return{
-
+        updateProductQuantity,
     }
 }
