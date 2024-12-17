@@ -24,7 +24,7 @@ export function useShoppingCartContext(){
     function containsObject(obj, list){
         var i;
         for (i = 0; i < list.length; i++) {
-            if (list[i].name === obj.name) {
+            if (list[i].id === obj.id) {
                 return true;
             }
         }
@@ -41,8 +41,8 @@ export function useShoppingCartContext(){
         }
     }
 
-    function deleteFromCart(productToRemoveName){
-        setCartProducts(cartProducts => cartProducts.filter(product => product.name !== productToRemoveName))
+    function deleteFromCart(productToRemoveId){
+        setCartProducts(cartProducts => cartProducts.filter(product => product.id !== productToRemoveId))
     }
 
     function clearCart(){
@@ -50,9 +50,8 @@ export function useShoppingCartContext(){
         alert('Thank you for your Purchase! :)')
     }
 
-    function updateCartProduct(productName, productQuantity){
-        console.log(productQuantity)
-        const productIndex = cartProducts.findIndex((product) => product.name == productName);
+    function updateCartProduct(productId, productQuantity){
+        const productIndex = cartProducts.findIndex((product) => product.id == productId);
 
         if (productIndex === -1) return;
 
@@ -64,8 +63,6 @@ export function useShoppingCartContext(){
 
         const updatedCart = [...cartProducts];
         updatedCart[productIndex] = updatedProduct;
-
-        console.log(updatedCart)
 
         setCartProducts(updatedCart);
     }

@@ -18,7 +18,7 @@ function AppRoutes() {
           <Routes>
               <Route index element={<Home/>}></Route>
               <Route path='/:productPage' element={<Products/>}></Route>
-              <Route path='/:productPage/:productName' element={<ProductDetails/>}></Route>
+              <Route path='/:productPage/:productId' element={<ProductDetails/>}></Route>
               <Route path='/additem' element={<AddItem/>}></Route>
               <Route path='/notfound' element={<NotFound/>}></Route>
               <Route path='*' element={<Navigate to="/notfound" replace />}></Route>

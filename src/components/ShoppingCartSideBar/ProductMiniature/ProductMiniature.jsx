@@ -4,12 +4,12 @@ import { useShoppingCartContext } from '../../../context/ShoppingCartContext';
 import { Button, Group, Input, NumberField } from 'react-aria-components';
 import { ProductContext } from '../../../context/ProductContext';
 
-function ProductMiniature({name, image, price, quantity}) {
+function ProductMiniature({id, name, image, price, quantity}) {
     const {deleteFromCart, updateCartProduct} = useShoppingCartContext();
     const {products} = useContext(ProductContext);
     const [inputValue, setInputValue] = useState(quantity);
 
-    const defaultProduct = products.find((product) => product.name == name);
+    const defaultProduct = products.find((product) => product.id == id);
 
     return (
         <div className={styles.productMiniature}>
@@ -25,7 +25,7 @@ function ProductMiniature({name, image, price, quantity}) {
                 <div className={styles.numberStepper}>
                     <NumberField aria-label='quantity field' value={inputValue} minValue={1} onChange={(value) => {
                         setInputValue(value);
-                        updateCartProduct(name, value);
+                        updateCartProduct(id, value);
                     }} 
                         maxValue={defaultProduct.quantity} className={styles.quantity}>
                         <Group aria-label='quantity group' className={styles.quantity__content}>
@@ -36,7 +36,7 @@ function ProductMiniature({name, image, price, quantity}) {
                     </NumberField>
                 </div>
             </div>
-            <button className={styles.deleteButton} onClick={() => deleteFromCart(name)}>
+            <button className={styles.deleteButton} onClick={() => deleteFromCart(id)}>
                     <img src='/images/trash.svg'/>
             </button>
         </div>

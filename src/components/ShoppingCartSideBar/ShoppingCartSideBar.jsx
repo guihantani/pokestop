@@ -39,7 +39,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
                 </button>
             </div>
             <div className={styles.products__container}>
-                {cartProducts.map((product) => <ProductMiniature key={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
+                {cartProducts.map((product) => <ProductMiniature key={product.id} id={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
             </div>
             <button id={'purchase__button'} className={styles.purchase__button} onClick={() => finishPurchase()}>Finish Purchase</button>
         </div>

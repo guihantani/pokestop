@@ -5,10 +5,10 @@ import PurchaseSideBar from '../../components/PurchaseSideBar/PurchaseSideBar';
 import styles from './ProductDetails.module.css'
 
 function ProductDetails() {
-    const productNameContainer = useParams();
+    const productIdContainer = useParams();
     const {products, isLoadingCategories, isLoadingProducts } = useContext(ProductContext)
     const filteredProduct = products.find(function(product){
-        return product.name === productNameContainer.productName
+        return (product.id).toString() === productIdContainer.productId
     })
     let PageContent;
 
