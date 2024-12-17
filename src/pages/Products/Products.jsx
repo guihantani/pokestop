@@ -9,7 +9,7 @@ function Products() {
   const productPageNameContainer = useParams();
   const {categories, isLoadingCategories, isLoadingProducts} = useContext(ProductContext)
   const filteredCategory = categories.find(function(category){
-      return category.route === productPageNameContainer.productPage
+      return category.name === productPageNameContainer.productPage
   })
 
   let PageContent;

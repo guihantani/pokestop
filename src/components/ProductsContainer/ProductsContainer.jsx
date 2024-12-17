@@ -9,11 +9,9 @@ function ProductsContainer({category}) {
   let categoryProducts;
   let filteredProducts;
   let categoryTitle = category;
-  let categoryPage = (`/${category}s/`);
   
   if(category == 'allproducts'){
     categoryTitle = 'All Products'
-    categoryPage = (`/allproducts/`)
     filteredProducts = products.filter((product) =>{
       if (
         product.name.toLowerCase().includes(search)
@@ -45,10 +43,10 @@ function ProductsContainer({category}) {
         <div className={styles.productsContainer}>
             {filteredProducts.map((product) =>{
               if(product.quantity == 0){
-                return(<Product outOfStock key={product.id} name={product.name} image={product.image} price={product.price} page={`${categoryPage}${product.id}`}/>)
+                return(<Product outOfStock key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}/${product.id}`}/>)
               }
               else{
-                return(<Product key={product.id} name={product.name} image={product.image} price={product.price} page={`${categoryPage}${product.id}`}/>)
+                return(<Product key={product.id} name={product.name} image={product.image} price={product.price} page={`/${category}/${product.id}`}/>)
               }
             })}
         </div>
