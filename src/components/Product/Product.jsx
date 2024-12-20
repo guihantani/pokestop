@@ -8,7 +8,7 @@ function Product({name, price, image, page, outOfStock = false}) {
       <div className={styles.product}>
           <div className={styles.outOfStock__overlay} style={{display: outOfStock? 'block' : 'none'}}>Out Of Stock</div>
           <div className={styles.image__container}>
-              <img src={image}/>
+              <img src={image} alt={`Image of ${name}`}/>
           </div>
           <div className={styles.text__container}>
               <p>{name}</p>
