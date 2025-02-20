@@ -23,6 +23,10 @@ function SoundButton({volume = 0.3}) {
     else if(location.pathname != '/' && soundSrc == '/sounds/homemusic.mp3' && audio.paused){
       audio.src = '/sounds/shopmusic.mp3'
     }
+    else if((location.pathname).includes('/productsDashboard') || (location.pathname).includes('/categoriesDashboard')){
+      audio.pause();
+      document.getElementById("button__container").style.display = 'none';
+    }
   }, [location]);
 
   function handleSoundButtonClick() {
