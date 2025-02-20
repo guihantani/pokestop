@@ -1,8 +1,11 @@
-section{
+.section{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
     padding: 30px;
+    background: linear-gradient(45deg, rgba(193,227,255,1) 17%, rgba(171,199,255,1) 85%);
 }
 
 .table{
@@ -13,19 +16,20 @@ section{
     border-spacing: 0;
     min-height: 100px;
     align-self: center;
+    background-color: white;
 }
 
-th{
+.table__header th{
     padding: 20px;
 }
 
-td{
+.row td{
     padding: 0 20px;
 }
 
-tbody tr:nth-child(odd) {
-    background-color: var(--orange);
-  }
+.table__body tr:nth-child(odd) {
+    background-color: #D3D3D3;
+}
 
 .header__text{
     text-align: start;

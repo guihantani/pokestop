@@ -7,7 +7,8 @@ import ProductDetails from './pages/ProductDetails/ProductDetails'
 import Products from './pages/Products/Products'
 import SoundButton from './components/SoundButton/SoundButton'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
-import Dashboard from './pages/Dashboard/Dashboard'
+import EditForm from './pages/EditForm/EditForm'
+import ProductsDashboard from './pages/ProductsDashboard/ProductsDashboard'
 
 function AppRoutes() {
   return (
@@ -19,7 +20,8 @@ function AppRoutes() {
               <Route index element={<Home/>}></Route>
               <Route path='/:productPage' element={<Products/>}></Route>
               <Route path='/:productPage/:productId' element={<ProductDetails/>}></Route>
-              <Route path='/dashboard' element={<Dashboard/>}></Route>
+              <Route path='/productsDashboard' element={<ProductsDashboard/>}></Route>
+              <Route path='/productsDashboard/editForm/:productId' element={<EditForm/>}></Route>
               <Route path='/notfound' element={<NotFound/>}></Route>
               <Route path='*' element={<Navigate to="/notfound" replace />}></Route>
           </Routes>
