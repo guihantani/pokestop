@@ -4,7 +4,7 @@
     justify-content: center;
     width: 100vw;
     min-height: 100vh;
-    padding: 30px;
+    padding: 100px 0 30px 0;
     background: linear-gradient(45deg, rgba(193,227,255,1) 17%, rgba(171,199,255,1) 85%);
 }
 
