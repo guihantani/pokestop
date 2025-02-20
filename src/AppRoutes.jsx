@@ -9,6 +9,7 @@ import SoundButton from './components/SoundButton/SoundButton'
 import { ShoppingCartProvider } from './context/ShoppingCartContext'
 import EditForm from './pages/EditForm/EditForm'
 import ProductsDashboard from './pages/ProductsDashboard/ProductsDashboard'
+import CategoriesDashboard from './pages/CategoriesDashboard/CategoriesDashboard'
 
 function AppRoutes() {
   return (
@@ -22,6 +23,8 @@ function AppRoutes() {
               <Route path='/:productPage/:productId' element={<ProductDetails/>}></Route>
               <Route path='/productsDashboard' element={<ProductsDashboard/>}></Route>
               <Route path='/productsDashboard/editForm/:productId' element={<EditForm/>}></Route>
+              <Route path='/categoriesDashboard' element={<CategoriesDashboard/>}></Route>
+              <Route path='/categoriesDashboard/editForm/:productId' element={<EditForm/>}></Route>
               <Route path='/notfound' element={<NotFound/>}></Route>
               <Route path='*' element={<Navigate to="/notfound" replace />}></Route>
           </Routes>

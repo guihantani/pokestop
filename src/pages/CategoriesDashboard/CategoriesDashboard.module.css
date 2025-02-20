@@ -1,0 +1,52 @@
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 30px;
+    background: linear-gradient(45deg, rgba(193,227,255,1) 17%, rgba(171,199,255,1) 85%);
+}
+
+.table{
+    min-width: 500px;
+    border: 1px solid black;
+    border-radius: 6px;
+    outline: none;
+    border-spacing: 0;
+    min-height: 100px;
+    align-self: center;
+    background-color: white;
+    font-size: 20px;
+}
+
+.table__header th{
+    padding: 20px;
+}
+
+.row td{
+    padding: 20px;
+}
+
+.table__body tr:nth-child(odd) {
+    background-color: #D3D3D3;
+}
+
+.header__text{
+    text-align: start;
+    border-bottom: 1px solid black;
+}
+
+.edit__del{
+    display: flex;
+    gap: 20px;
+}
+
+.icon__button{
+    background-color: transparent;
+    border: none;
+}
+
+.icon__button:hover{
+    cursor: pointer;
+}
