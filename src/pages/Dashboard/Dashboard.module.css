@@ -1,0 +1,47 @@
+section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+}
+
+.table{
+    min-width: 900px;
+    border: 1px solid black;
+    border-radius: 6px;
+    outline: none;
+    border-spacing: 0;
+    min-height: 100px;
+    align-self: center;
+}
+
+th{
+    padding: 20px;
+}
+
+td{
+    padding: 0 20px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: var(--orange);
+  }
+
+.header__text{
+    text-align: start;
+    border-bottom: 1px solid black;
+}
+
+.edit__del{
+    display: flex;
+    gap: 20px;
+}
+
+.icon__button{
+    background-color: transparent;
+    border: none;
+}
+
+.icon__button:hover{
+    cursor: pointer;
+}
