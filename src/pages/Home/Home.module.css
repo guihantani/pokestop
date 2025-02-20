@@ -7,9 +7,10 @@
 }
 
 .vignette{
-    position: fixed;
-    height: 90%;
-    width: 85%;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    vertical-align: top;
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/86186/crt.png);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;	
@@ -18,10 +19,11 @@
 }
 
 .container{
+    position: relative;
     height: 90%;
     width: 85%;
     background-color: white;
-    margin: auto;
+    
 }
 
 .upper__screen{
