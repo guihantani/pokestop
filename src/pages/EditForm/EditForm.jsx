@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import styles from './EditForm.module.css'
+import { ProductContext } from '../../context/ProductContext'
+import { useParams } from 'react-router-dom';
+import ProductForm from '../../components/ProductForm/ProductForm';
 
 function EditForm() {
+  const {products} = useContext(ProductContext);
+  let id = parseInt(useParams().productId, 10);
+
+  let currentProduct = products.find(product => product.id === id)
+
   return (
-    <div>EditForm</div>
+    <ProductForm product={currentProduct}/>
   )
 }
 
