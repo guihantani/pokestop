@@ -74,6 +74,9 @@ function ProductForm({ product, newProduct = false }) {
                                 setDescription(event.target.value)
                             })}/>
                         </div>
+                        <div className={styles.input}>
+                            <input type="submit" value="Confirm Changes"/>
+                        </div>
                     </form>
                 </section>
             </>

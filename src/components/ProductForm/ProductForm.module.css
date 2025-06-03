@@ -42,6 +42,12 @@
     border-radius: 3px;
 }
 
+.input input[type="submit"]{
+    background-color: var(--orange);
+    color: white;
+    font-size: 20px;
+}
+
 .input label{
     font-weight: 700;
 }
