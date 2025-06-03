@@ -25,10 +25,9 @@ function ProductForm({ product, newProduct = false }) {
     }
     else if(!newProduct){
         PageContent = (
-            <>
-                <h1>Edit Product:</h1>
+            <section className={styles.productForm}>
                 <img src={product.image}/>
-                <form id='product-form' onSubmit={submitForm}>
+                <form id='product-form' onSubmit={submitForm} className={styles.form}>
                     <div className={styles.input}>
                         <label htmlFor='name'>Name</label>
                         <input required type='text' id='name' name='name' placeholder='Name' defaultValue={product.name} onChange={((event) => {
@@ -71,7 +70,7 @@ function ProductForm({ product, newProduct = false }) {
                         })}/>
                     </div>
                 </form>
-            </>
+            </section>
         )
     }
     else{
