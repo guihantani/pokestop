@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom'
 import { ProductContext } from '../../context/ProductContext';
 import PurchaseSideBar from '../../components/PurchaseSideBar/PurchaseSideBar';
 import styles from './ProductDetails.module.css'
+import BackButton from '../../components/BackButton/BackButton';
 
 function ProductDetails() {
     const productIdContainer = useParams();
@@ -38,6 +39,7 @@ function ProductDetails() {
 
     return (
         <>
+            <BackButton/>
             {PageContent}
         </>
     )

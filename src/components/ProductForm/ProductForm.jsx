@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import styles from './ProductForm.module.css'
 import { ProductContext } from '../../context/ProductContext';
 import { NavLink } from 'react-router-dom';
+import BackButton from '../BackButton/BackButton';
 
 function ProductForm({ product, newProduct = false }) {
     const {categories, isLoadingProducts, isLoadingCategories} = useContext(ProductContext)
@@ -27,9 +28,7 @@ function ProductForm({ product, newProduct = false }) {
     else if(!newProduct){
         PageContent = (
             <>
-                <NavLink to={-1}>
-                    <img className={styles.back} src='/images/back-arrow.svg' height={'50x'}/>
-                </NavLink>
+                <BackButton/>
                 <section className={styles.productForm}>
                     <img src={product.image}/>
                     <form id='product-form' onSubmit={submitForm} className={styles.form}>
