@@ -15,7 +15,6 @@ function ProductForm({ product, newProduct = false }) {
     const [description, setDescription] = useState('');
 
     let PageContent;
-    console.log(categories)
 
     const submitForm = (event) => {
         event.preventDefault()
@@ -40,7 +39,7 @@ function ProductForm({ product, newProduct = false }) {
                         </div>
                         <div className={styles.input}>
                             <label htmlFor='price'>Price</label>
-                            <input required type='number' id='price' name='price' placeholder='R$' defaultValue={parseFloat(product.price).toFixed(2)} onChange={((event) => {
+                            <input required type='number' id='price' name='price' placeholder='R$' min={0} defaultValue={parseFloat(product.price).toFixed(2)} onChange={((event) => {
                                 setPrice(String((parseFloat(event.target.value).toFixed(2))))
                             })}/>
                         </div>
@@ -57,7 +56,7 @@ function ProductForm({ product, newProduct = false }) {
                         </div>
                         <div className={styles.input}>
                             <label htmlFor='quantity'>Quantity</label>
-                            <input required type='number' id='quantity' name='quantity' placeholder='0' defaultValue={product.quantity} onChange={((event) => {
+                            <input required type='number' id='quantity' name='quantity' placeholder='0' min={0} defaultValue={product.quantity} onChange={((event) => {
                                 setQuantity(event.target.value)
                             })}/>
                         </div>
@@ -83,7 +82,57 @@ function ProductForm({ product, newProduct = false }) {
     }
     else{
         PageContent = (
-            <h1>New Product</h1>
+            <>
+                <BackButton/>
+                <section className={styles.productForm}>
+                    <form id='product-form' onSubmit={submitForm} className={styles.form}>
+                        <div className={styles.input}>
+                            <label htmlFor='name'>Name</label>
+                            <input required type='text' id='name' name='name' placeholder='Name' onChange={((event) => {
+                                setName(event.target.value)
+                            })}/>
+                        </div>
+                        <div className={styles.input}>
+                            <label htmlFor='price'>Price</label>
+                            <input required type='number' id='price' name='price' placeholder='R$' min={0} onChange={((event) => {
+                                setPrice(String((parseFloat(event.target.value).toFixed(2))))
+                            })}/>
+                        </div>
+                        <div className={styles.input}>
+                            <label htmlFor='category'>Category</label>
+                            <select required id='category' name='category' onChange={((event) => {
+                                setCategory(event.target.value)
+                            })}>
+                                <option value='' hidden>Select a Category</option>
+                                {categories.map((category) => {
+                                    return(<option key={category.id} value={category.name}>{category.name}</option>)
+                                })}
+                            </select>
+                        </div>
+                        <div className={styles.input}>
+                            <label htmlFor='quantity'>Quantity</label>
+                            <input required type='number' id='quantity' name='quantity' placeholder='0' min={0} onChange={((event) => {
+                                setQuantity(event.target.value)
+                            })}/>
+                        </div>
+                        <div className={styles.input}>
+                            <label htmlFor='image'>Image URL</label>
+                            <input required type='text' id='image' name='image' placeholder='Image URL' onChange={((event) => {
+                                setImage(event.target.value)
+                            })}/>
+                        </div>
+                        <div className={styles.input}>
+                            <label htmlFor='description'>Description</label>
+                            <textarea required type='text' rows='10' id='description' name='description' placeholder='Description' onChange={((event) => {
+                                setDescription(event.target.value)
+                            })}/>
+                        </div>
+                        <div className={styles.input}>
+                            <input type="submit" value="Confirm Changes"/>
+                        </div>
+                    </form>
+                </section>
+            </>
         )
     }
 
