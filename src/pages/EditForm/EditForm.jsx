@@ -6,7 +6,7 @@ import ProductForm from '../../components/ProductForm/ProductForm';
 
 function EditForm() {
   const {products} = useContext(ProductContext);
-  let id = parseInt(useParams().productId, 10);
+  let id = useParams().productId;
 
   let currentProduct = products.find(product => product.id === id)
 
