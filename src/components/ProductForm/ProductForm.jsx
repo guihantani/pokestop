@@ -1,11 +1,13 @@
 import React, { useContext, useState } from 'react'
 import styles from './ProductForm.module.css'
-import { ProductContext } from '../../context/ProductContext';
+import { ProductContext, useProductContext } from '../../context/ProductContext';
 import { NavLink } from 'react-router-dom';
 import BackButton from '../BackButton/BackButton';
+import { v4 as uuid } from 'uuid'
 
 function ProductForm({ product, newProduct = false }) {
     const {categories, isLoadingProducts, isLoadingCategories} = useContext(ProductContext)
+    const {addProduct} = useProductContext();
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -19,6 +21,21 @@ function ProductForm({ product, newProduct = false }) {
     const submitForm = (event) => {
         event.preventDefault()
         alert('Form Submited')
+    }
+
+    const formAddProduct = (event) => {
+        event.preventDefault()
+        const newProduct = {
+            "id": uuid(),
+            "name": name,
+            "price": price,
+            "category": category,
+            "quantity": quantity,
+            "image": image,
+            "description": description
+        }
+
+        addProduct(newProduct);
     }
     
     if(isLoadingCategories || isLoadingProducts){
@@ -85,7 +102,7 @@ function ProductForm({ product, newProduct = false }) {
             <>
                 <BackButton/>
                 <section className={styles.productForm}>
-                    <form id='product-form' onSubmit={submitForm} className={styles.form}>
+                    <form id='product-form' onSubmit={formAddProduct} className={styles.form}>
                         <div className={styles.input}>
                             <label htmlFor='name'>Name</label>
                             <input required type='text' id='name' name='name' placeholder='Name' onChange={((event) => {
@@ -128,7 +145,7 @@ function ProductForm({ product, newProduct = false }) {
                             })}/>
                         </div>
                         <div className={styles.input}>
-                            <input type="submit" value="Confirm Changes"/>
+                            <input type="submit" value="Add Product"/>
                         </div>
                     </form>
                 </section>

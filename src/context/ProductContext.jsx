@@ -74,7 +74,50 @@ export function useProductContext(){
         getData();
     }
 
+    function addProduct(product){
+        const getData = async ()=>{
+            try{
+                await axios.post(`${APIAdress}/products`,{
+                    "id": product.id,
+                    "name": product.name,
+                    "price": product.price,
+                    "category": product.category,
+                    "quantity": product.quantity,
+                    "image": product.image,
+                    "description": product.description
+                })
+                .then((response) => {
+                    setProducts([...products, response.data]);
+                    alert("Product added successfully!");
+                    window.location.reload();
+                })
+            } catch(error){
+                console.log(error);
+                alert("Failed to add product, try again later");
+            }
+        }
+        getData();
+    }
+
+    function deleteProduct(product){
+        const getData = async ()=>{
+            try{
+                await axios.delete(`${APIAdress}/products/${product.id}`)
+                .then(() => {
+                    setProducts(products.filter((currentProduct) => currentProduct.id !== product.id));
+                    alert("Product Removed successfully!");
+                })
+            } catch(error){
+                console.log(error);
+                alert("Failed to Remove product, try again later");
+            }
+        }
+        getData();
+    }
+
     return{
         updateProductQuantity,
+        addProduct,
+        deleteProduct,
     }
 }

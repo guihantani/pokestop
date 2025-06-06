@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import styles from './ProductsDashboard.module.css'
-import { ProductContext } from '../../context/ProductContext'
+import { ProductContext, useProductContext } from '../../context/ProductContext'
 import {Cell, Column, Row, Table, TableBody, TableHeader} from 'react-aria-components';
 import { NavLink } from 'react-router-dom';
 import DashboardHeader from '../../components/DashboardHeader/DashboardHeader';
 
 function ProductsDashboard() {
   const {products} = useContext(ProductContext);
+  const {deleteProduct} = useProductContext();
 
   return (
     <>
@@ -39,7 +40,7 @@ function ProductsDashboard() {
                     <Cell>
                       <div className={styles.edit__del}>
                         <NavLink className={styles.icon__button} to={`/productsDashboard/editForm/${product.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
-                        <button className={styles.icon__button}><img src='/images/delete.svg' height={30}/></button>
+                        <button className={styles.icon__button} onClick={() => deleteProduct(product)}><img src='/images/delete.svg' height={30}/></button>
                       </div>
                     </Cell>
                   </Row>
