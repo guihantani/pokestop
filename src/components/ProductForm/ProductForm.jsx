@@ -7,7 +7,7 @@ import { v4 as uuid } from 'uuid'
 
 function ProductForm({ product, newProduct = false }) {
     const {categories, isLoadingProducts, isLoadingCategories} = useContext(ProductContext)
-    const {addProduct} = useProductContext();
+    const {addProduct, editProduct} = useProductContext();
 
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -18,9 +18,24 @@ function ProductForm({ product, newProduct = false }) {
 
     let PageContent;
 
-    const submitForm = (event) => {
+    const formEditProduct = (event) => {
         event.preventDefault()
-        alert('Form Submited')
+        const newProduct = {
+            "id": product.id,
+            "name": (name === '' ? product.name : name),
+            "price": (price === '' ? product.price : price),
+            "category": (category === '' ? product.category : category),
+            "quantity": (quantity === '' ? product.quantity : parseInt(quantity)),
+            "image": (image === '' ? product.image : image),
+            "description": (description === '' ? product.description : description)
+        }
+        if(name === '' && price === '' && category === '' && quantity === '' && image === '' && description === ''){
+            alert("Product needs to be edited to confirm changes!");
+        }
+        else{
+            editProduct(newProduct)
+            window.history.back();
+        }
     }
 
     const formAddProduct = (event) => {
@@ -36,6 +51,7 @@ function ProductForm({ product, newProduct = false }) {
         }
 
         addProduct(newProduct);
+        window.history.back();
     }
     
     if(isLoadingCategories || isLoadingProducts){
@@ -47,7 +63,7 @@ function ProductForm({ product, newProduct = false }) {
                 <BackButton/>
                 <section className={styles.productForm}>
                     <img src={product.image}/>
-                    <form id='product-form' onSubmit={submitForm} className={styles.form}>
+                    <form id='product-form' onSubmit={formEditProduct} className={styles.form}>
                         <div className={styles.input}>
                             <label htmlFor='name'>Name</label>
                             <input required type='text' id='name' name='name' placeholder='Name' defaultValue={product.name} onChange={((event) => {

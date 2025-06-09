@@ -99,7 +99,33 @@ export function useProductContext(){
         getData();
     }
 
+    function editProduct(product){
+        const getData = async ()=>{
+            try{
+                await axios.put(`${APIAdress}/products/${product.id}`,{
+                    "id": product.id,
+                    "name": product.name,
+                    "price": product.price,
+                    "category": product.category,
+                    "quantity": product.quantity,
+                    "image": product.image,
+                    "description": product.description
+                })
+                .then(() => {
+                    setProducts(products.map(thisProduct => thisProduct.id === product.id ? product : thisProduct));
+                    alert("Product edited successfully!");
+                    window.location.reload();
+                })
+            } catch(error){
+                console.log(error);
+                alert("Failed to edit product, try again later");
+            }
+        }
+        getData();
+    }
+
     function deleteProduct(product){
+        console.log(`${APIAdress}/products/${product.id}`)
         const getData = async ()=>{
             try{
                 await axios.delete(`${APIAdress}/products/${product.id}`)
@@ -118,6 +144,7 @@ export function useProductContext(){
     return{
         updateProductQuantity,
         addProduct,
+        editProduct,
         deleteProduct,
     }
 }
