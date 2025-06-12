@@ -1,15 +1,15 @@
 {
   "categories": [
     {
-      "id": 0,
+      "id": "0",
       "name": "pokemons"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "items"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "badges"
     }
   ],
