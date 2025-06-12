@@ -10,6 +10,10 @@ function Home() {
     navigate('/allproducts');
   }
 
+  function handleDashboardClick() {
+    navigate('/productsDashboard');
+  }
+
   return (
     <>
       <section className={styles.home}>
@@ -21,6 +25,7 @@ function Home() {
           </div>
           <div className={styles.bottom__screen}>
             <Button className={styles.button} onPress={() => handleButtonClick()}>Enter Store</Button>
+            <Button className={styles.button} onPress={() => handleDashboardClick()}>DashBoard</Button>
           </div>
         </div>
       </section>
