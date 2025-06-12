@@ -39,7 +39,7 @@ function ProductsDashboard() {
                     <Cell>{product.quantity}</Cell>
                     <Cell>
                       <div className={styles.edit__del}>
-                        <NavLink className={styles.icon__button} to={`/productsDashboard/editForm/${product.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
+                        <NavLink className={styles.icon__button} to={`/productsDashboard/productEditForm/${product.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
                         <button className={styles.icon__button} onClick={() => deleteProduct(product)}><img src='/images/delete.svg' height={30}/></button>
                       </div>
                     </Cell>

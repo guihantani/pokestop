@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
-import styles from './EditForm.module.css'
+import styles from './ProductEditForm.module.css'
 import { ProductContext } from '../../context/ProductContext'
 import { useParams } from 'react-router-dom';
 import ProductForm from '../../components/ProductForm/ProductForm';
 
-function EditForm() {
+function ProductEditForm() {
   const {products} = useContext(ProductContext);
   let id = useParams().productId;
 
@@ -15,4 +15,4 @@ function EditForm() {
   )
 }
 
-export default EditForm
+export default ProductEditForm
