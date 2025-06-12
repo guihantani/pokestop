@@ -26,7 +26,7 @@ function CategoriesDashboard() {
                     <Cell>{category.name}</Cell>
                     <Cell>
                         <div className={styles.edit__del}>
-                        <NavLink className={styles.icon__button} to={`/categoriesDashboard/editForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
+                        <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
                         <button className={styles.icon__button}><img src='/images/delete.svg' height={30}/></button>
                         </div>
                     </Cell>

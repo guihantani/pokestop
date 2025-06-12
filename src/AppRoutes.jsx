@@ -11,6 +11,7 @@ import ProductsDashboard from './pages/ProductsDashboard/ProductsDashboard'
 import CategoriesDashboard from './pages/CategoriesDashboard/CategoriesDashboard'
 import AddProductForm from './pages/AddProductForm/AddProductForm'
 import ProductEditForm from './pages/ProductEditForm/ProductEditForm'
+import CategoryEditForm from './pages/CategoryEditForm/CategoryEditForm'
 
 function AppRoutes() {
   return (
@@ -26,7 +27,7 @@ function AppRoutes() {
               <Route path='/productsDashboard/productEditForm/:productId' element={<ProductEditForm/>}></Route>
               <Route path='/productsDashboard/addProductForm' element={<AddProductForm/>}></Route>
               <Route path='/categoriesDashboard' element={<CategoriesDashboard/>}></Route>
-              <Route path='/categoriesDashboard/categoryEditForm/:productId' element={<ProductEditForm/>}></Route>
+              <Route path='/categoriesDashboard/categoryEditForm/:categoryId' element={<CategoryEditForm/>}></Route>
               <Route path='/notfound' element={<NotFound/>}></Route>
               <Route path='*' element={<Navigate to="/notfound" replace />}></Route>
           </Routes>
