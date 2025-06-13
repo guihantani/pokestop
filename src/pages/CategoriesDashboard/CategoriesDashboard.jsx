@@ -12,30 +12,35 @@ function CategoriesDashboard() {
     <>
         <DashboardHeader/>
         <section className={styles.section}>
-            <Table className={styles.table} aria-label="Files" selectionMode="multiple">
-            <TableHeader className={styles.table__header}>
-                <Column isRowHeader className={styles.header__text}>Id</Column>
-                <Column className={styles.header__text}>Name</Column>
-                <Column className={styles.header__text}></Column>
-            </TableHeader>
-            <TableBody className={styles.table__body}>
-                {categories.map((category) => {return(
-                <>
-                    <Row className={styles.row}>
-                    <Cell>{category.id}</Cell>
-                    <Cell>{category.name}</Cell>
-                    <Cell>
-                        <div className={styles.edit__del}>
-                        <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
-                        <button className={styles.icon__button}><img src='/images/delete.svg' height={30}/></button>
-                        </div>
-                    </Cell>
-                    </Row>
-                </>
-                )
-                })}
-            </TableBody>
-            </Table>
+            <div className={styles.container}>
+                <div className={styles.add__category}>
+                    <NavLink to={'/categoriesDashboard/addCategoryForm'}>Add Category</NavLink>
+                </div>
+                <Table className={styles.table} aria-label="Files" selectionMode="multiple">
+                <TableHeader className={styles.table__header}>
+                    <Column isRowHeader className={styles.header__text}>Id</Column>
+                    <Column className={styles.header__text}>Name</Column>
+                    <Column className={styles.header__text}></Column>
+                </TableHeader>
+                <TableBody className={styles.table__body}>
+                    {categories.map((category) => {return(
+                    <>
+                        <Row className={styles.row}>
+                        <Cell>{category.id}</Cell>
+                        <Cell>{category.name}</Cell>
+                        <Cell>
+                            <div className={styles.edit__del}>
+                            <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
+                            <button className={styles.icon__button}><img src='/images/delete.svg' height={30}/></button>
+                            </div>
+                        </Cell>
+                        </Row>
+                    </>
+                    )
+                    })}
+                </TableBody>
+                </Table>
+            </div>
         </section>
         </>
         )

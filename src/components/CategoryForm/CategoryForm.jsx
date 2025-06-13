@@ -15,6 +15,11 @@ function CategoryForm({category, isNewCategory = false}) {
     alert('Test')
   }
 
+  const formAddCategory = (event) => {
+    event.preventDefault()
+    alert('Test2')
+  }
+
 
   if (isLoadingCategories) {
     PageContent = <h1>Loading...</h1>
@@ -28,6 +33,26 @@ function CategoryForm({category, isNewCategory = false}) {
             <div className={styles.input}>
               <label htmlFor='name'>Name</label>
               <input required type='text' id='name' name='name' placeholder='Name' defaultValue={category.name} onChange={((event) => {
+                setName(event.target.value)
+              })} />
+            </div>
+            <div className={styles.input}>
+              <input type="submit" value="Confirm Changes" />
+            </div>
+          </form>
+        </section>
+      </>
+    )
+  }
+  else if (isNewCategory) {
+    PageContent = (
+      <>
+        <BackButton />
+        <section className={styles.categoryForm}>
+          <form id='category-form' onSubmit={formAddCategory} className={styles.form}>
+            <div className={styles.input}>
+              <label htmlFor='name'>Name</label>
+              <input required type='text' id='name' name='name' placeholder='Name' onChange={((event) => {
                 setName(event.target.value)
               })} />
             </div>
