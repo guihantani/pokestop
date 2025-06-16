@@ -1,10 +1,12 @@
 import React, { useContext, useState } from 'react'
 import styles from "./CategoryForm.module.css"
 import BackButton from '../BackButton/BackButton';
-import { ProductContext } from '../../context/ProductContext';
+import { ProductContext, useProductContext } from '../../context/ProductContext';
+import { v4 as uuid } from 'uuid'
 
 function CategoryForm({category, isNewCategory = false}) {
   const { categories, isLoadingCategories } = useContext(ProductContext)
+  const { addCategory, editCategory } = useProductContext()
 
   const [name, setName] = useState('');
 
@@ -12,12 +14,27 @@ function CategoryForm({category, isNewCategory = false}) {
 
   const formEditCategory = (event) => {
     event.preventDefault()
-    alert('Test')
+    if(name === ''){
+      alert('Category needs to be changed to confirm changes!');
+    }
+    else{
+      const newCategory = {
+        "id": category.id,
+        "name": name
+      }
+      editCategory(category, newCategory);
+      window.history.back();
+    }
   }
 
   const formAddCategory = (event) => {
     event.preventDefault()
-    alert('Test2')
+    const newCategory = {
+        "id": uuid(),
+        "name": name
+    }
+    addCategory(newCategory);
+    window.history.back();
   }
 
 

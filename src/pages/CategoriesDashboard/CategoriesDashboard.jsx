@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
 import styles from './CategoriesDashboard.module.css'
-import { ProductContext } from '../../context/ProductContext'
+import { ProductContext, useProductContext } from '../../context/ProductContext'
 import {Cell, Column, Row, Table, TableBody, TableHeader} from 'react-aria-components';
 import { NavLink } from 'react-router-dom';
 import DashboardHeader from '../../components/DashboardHeader/DashboardHeader';
 
 function CategoriesDashboard() {
     const {categories} = useContext(ProductContext);
+    const {deleteCategory} = useProductContext();
     
     return (
     <>
@@ -23,20 +24,37 @@ function CategoriesDashboard() {
                     <Column className={styles.header__text}></Column>
                 </TableHeader>
                 <TableBody className={styles.table__body}>
-                    {categories.map((category) => {return(
-                    <>
-                        <Row className={styles.row}>
-                        <Cell>{category.id}</Cell>
-                        <Cell>{category.name}</Cell>
-                        <Cell>
-                            <div className={styles.edit__del}>
-                            <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
-                            <button className={styles.icon__button}><img src='/images/delete.svg' height={30}/></button>
-                            </div>
-                        </Cell>
-                        </Row>
-                    </>
-                    )
+                    {categories.map((category) => {
+                        if(category.name === 'others'){
+                            return(
+                                <>
+                                    <Row className={styles.row}>
+                                    <Cell>{category.id}</Cell>
+                                    <Cell>{category.name}</Cell>
+                                    <Cell>
+                                        <div className={styles.edit__del}>
+                                        </div>
+                                    </Cell>
+                                    </Row>
+                                </>
+                            )
+                        }
+                        else{
+                            return(
+                                <>
+                                    <Row className={styles.row}>
+                                    <Cell>{category.id}</Cell>
+                                    <Cell>{category.name}</Cell>
+                                    <Cell>
+                                        <div className={styles.edit__del}>
+                                            <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
+                                            <button className={styles.icon__button} onClick={() => deleteCategory(category)}><img src='/images/delete.svg' height={30}/></button>
+                                        </div>
+                                    </Cell>
+                                    </Row>
+                                </>
+                        )
+                        }
                     })}
                 </TableBody>
                 </Table>

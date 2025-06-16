@@ -49,7 +49,7 @@ export const ProductProvider = ({children}) => {
 }
 
 export function useProductContext(){
-    const {products, setProducts} = useContext(ProductContext)
+    const {products, setProducts, categories, setCategories} = useContext(ProductContext)
     
     function updateProductQuantity(productPurchased){
         const originalProduct = products.find((product) => product.id == productPurchased.id);
@@ -125,7 +125,6 @@ export function useProductContext(){
     }
 
     function deleteProduct(product){
-        console.log(`${APIAdress}/products/${product.id}`)
         const getData = async ()=>{
             try{
                 await axios.delete(`${APIAdress}/products/${product.id}`)
@@ -141,10 +140,105 @@ export function useProductContext(){
         getData();
     }
 
+    function addCategory(category){
+        const getData = async ()=>{
+            try{
+                await axios.post(`${APIAdress}/categories`,{
+                    "id": category.id,
+                    "name": category.name
+                })
+                .then((response) => {
+                    setCategories([...categories, response.data]);
+                    alert("Category added successfully!");
+                    window.location.reload();
+                })
+            } catch(error){
+                console.log(error);
+                alert("Failed to add product, try again later");
+            }
+        }
+        getData();
+    }
+
+    function editCategory(oldCategory, newCategory){
+        const categoryProducts = products.filter((currentProduct) => currentProduct.category === oldCategory.name)
+        const getData = async ()=>{
+            try{
+                for(let i = 0; i < categoryProducts.length; i++){
+                    await axios.put(`${APIAdress}/products/${categoryProducts[i].id}`,{
+                        "id": categoryProducts[i].id,
+                        "name": categoryProducts[i].name,
+                        "price": categoryProducts[i].price,
+                        "category": newCategory.name,
+                        "quantity": categoryProducts[i].quantity,
+                        "image": categoryProducts[i].image,
+                        "description": categoryProducts[i].description
+                    })
+                }
+                setProducts(products.map((thisProduct) => {
+                    if(thisProduct.category === oldCategory.name){
+                        thisProduct.category = newCategory.name
+                    }
+                }));
+                await axios.put(`${APIAdress}/categories/${oldCategory.id}`,{
+                        "id": oldCategory.id,
+                        "name": newCategory.name
+                })
+                .then(() => {
+                    setCategories(categories.map(thisCategory => thisCategory.id === oldCategory.id ? newCategory : thisCategory));
+                })
+                alert("Category edited successfully!");
+                window.location.reload();
+            } catch(error){
+                console.log(error);
+                alert("Failed to edit category, try again later");
+            }
+        }
+        getData();
+    }
+
+    function deleteCategory(category){
+        const categoryProducts = products.filter((currentProduct) => currentProduct.category === category.name)
+        const getData = async ()=>{
+            try{
+                for(let i = 0; i < categoryProducts.length; i++){
+                    await axios.put(`${APIAdress}/products/${categoryProducts[i].id}`,{
+                        "id": categoryProducts[i].id,
+                        "name": categoryProducts[i].name,
+                        "price": categoryProducts[i].price,
+                        "category": "others",
+                        "quantity": categoryProducts[i].quantity,
+                        "image": categoryProducts[i].image,
+                        "description": categoryProducts[i].description
+                    })
+                }
+                setProducts(products.map((thisProduct) => {
+                    if(thisProduct.category === category.name){
+                        thisProduct.category = "others"
+                    }
+                }));
+                await axios.delete(`${APIAdress}/categories/${category.id}`)
+                .then(() => {
+                    setCategories(categories.filter((currentCategory) => currentCategory.id !== category.id));
+                    alert("Category Removed successfully!");
+                    window.location.reload();
+                })
+            } catch(error){
+                console.log(error);
+                alert("Failed to Remove Category, try again later");
+            }
+        }
+        getData();
+    }
+
+
     return{
         updateProductQuantity,
         addProduct,
         editProduct,
         deleteProduct,
+        addCategory,
+        editCategory,
+        deleteCategory,
     }
 }
