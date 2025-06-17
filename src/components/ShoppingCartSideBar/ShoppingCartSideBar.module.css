@@ -20,6 +20,13 @@
     padding-bottom: 40px;
 }
 
+.empty__cart__text{
+    display: flex;
+    align-self: center;
+    color: gray;
+    padding-top: 35vh;
+}
+
 .button__container{
     width: 100%;
     display: flex;

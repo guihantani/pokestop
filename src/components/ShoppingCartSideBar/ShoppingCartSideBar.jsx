@@ -18,7 +18,11 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
         }
 
         if(cartProducts.length == 0){
+            document.getElementById('empty__cart__text').style.display = 'flex'
             document.getElementById('purchase__button').style.display = 'none'
+        }
+        else{
+            document.getElementById('empty__cart__text').style.display = 'none'
         }
     })
 
@@ -39,6 +43,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
                 </button>
             </div>
             <div className={styles.products__container}>
+                <h1 id={'empty__cart__text'} className={styles.empty__cart__text}>Empty Cart</h1>
                 {cartProducts.map((product) => <ProductMiniature key={product.id} id={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
             </div>
             <button id={'purchase__button'} className={styles.purchase__button} onClick={() => finishPurchase()}>Finish Purchase</button>
