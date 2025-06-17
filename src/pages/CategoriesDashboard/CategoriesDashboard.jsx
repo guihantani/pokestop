@@ -9,6 +9,15 @@ function CategoriesDashboard() {
     const {categories} = useContext(ProductContext);
     const {deleteCategory} = useProductContext();
     
+    function ConfirmDeletion(category){
+        if(confirm(`Delete "${category.name}"?`)){
+        deleteCategory(category)
+        }
+        else{
+        return
+        }
+    }
+
     return (
     <>
         <DashboardHeader/>
@@ -48,7 +57,7 @@ function CategoriesDashboard() {
                                     <Cell>
                                         <div className={styles.edit__del}>
                                             <NavLink className={styles.icon__button} to={`/categoriesDashboard/categoryEditForm/${category.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
-                                            <button className={styles.icon__button} onClick={() => deleteCategory(category)}><img src='/images/delete.svg' height={30}/></button>
+                                            <button className={styles.icon__button} onClick={() => ConfirmDeletion(category)}><img src='/images/delete.svg' height={30}/></button>
                                         </div>
                                     </Cell>
                                     </Row>

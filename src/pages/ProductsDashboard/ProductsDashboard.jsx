@@ -9,6 +9,15 @@ function ProductsDashboard() {
   const {products} = useContext(ProductContext);
   const {deleteProduct} = useProductContext();
 
+  function ConfirmDeletion(product){
+    if(confirm(`Delete "${product.name}"?`)){
+      deleteProduct(product)
+    }
+    else{
+      return
+    }
+  }
+
   return (
     <>
       <DashboardHeader/>
@@ -40,7 +49,7 @@ function ProductsDashboard() {
                     <Cell>
                       <div className={styles.edit__del}>
                         <NavLink className={styles.icon__button} to={`/productsDashboard/productEditForm/${product.id}`}><img src='/images/edit.svg' height={30}/></NavLink>
-                        <button className={styles.icon__button} onClick={() => deleteProduct(product)}><img src='/images/delete.svg' height={30}/></button>
+                        <button className={styles.icon__button} onClick={() => ConfirmDeletion(product)}><img src='/images/delete.svg' height={30}/></button>
                       </div>
                     </Cell>
                   </Row>
