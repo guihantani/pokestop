@@ -7,6 +7,7 @@ import { useProductContext } from '../../context/ProductContext'
 function ShoppingCartSideBar({isOpen, closeSidebar}) {
     const {updateProductQuantity} = useProductContext();
     const {cartProducts} = useContext(ShoppingCartContext)
+    const {getTotalCartCost} = useShoppingCartContext()
     const {clearCart} = useShoppingCartContext();
 
     useEffect(() => {
@@ -20,6 +21,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
         if(cartProducts.length == 0){
             document.getElementById('empty__cart__text').style.display = 'flex'
             document.getElementById('purchase__button').style.display = 'none'
+            document.getElementById('total__cost').style.display = 'none'
         }
         else{
             document.getElementById('empty__cart__text').style.display = 'none'
@@ -46,6 +48,7 @@ function ShoppingCartSideBar({isOpen, closeSidebar}) {
                 <h1 id={'empty__cart__text'} className={styles.empty__cart__text}>Empty Cart</h1>
                 {cartProducts.map((product) => <ProductMiniature key={product.id} id={product.id} name={product.name} image={product.image} price={product.price} quantity={product.quantity}/>)}
             </div>
+            <h1 id={'total__cost'} className={styles.total__cost}>{`Total Cost: R$${getTotalCartCost()}`}</h1>
             <button id={'purchase__button'} className={styles.purchase__button} onClick={() => finishPurchase()}>Finish Purchase</button>
         </div>
   )

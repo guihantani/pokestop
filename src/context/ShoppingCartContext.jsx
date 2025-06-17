@@ -67,10 +67,19 @@ export function useShoppingCartContext(){
         setCartProducts(updatedCart);
     }
 
+    function getTotalCartCost(){
+        let totalCost = 0;
+        for (var i = 0; i < cartProducts.length; i++) {
+            totalCost += parseFloat(cartProducts[i].price) * cartProducts[i].quantity;
+        }
+        return totalCost.toFixed(2);
+    }
+
    return{
         addToCart,
         deleteFromCart,
         clearCart,
         updateCartProduct,
+        getTotalCartCost,
     }
 }
