@@ -1,13 +1,35 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import styles from './PurchaseSideBar.module.css'
 import {NumberField, Group, Input, Button} from 'react-aria-components';
 import { ShoppingCartContext, useShoppingCartContext } from '../../context/ShoppingCartContext';
 import { useNavigate } from 'react-router-dom';
 
-function PurchaseSideBar({product}) {
+function PurchaseSideBar({isOpen, closePurchaseSidebar, product}) {
     const navigate = useNavigate();
     const {addToCart} = useShoppingCartContext();
     const [inputValue, setInputValue] = useState(1);
+
+    window.addEventListener('resize', resize);
+
+    function resize() {
+        if (window.innerWidth < 1200) {
+            closePurchaseSidebar();
+            document.getElementById('purchaseSideBar').style.transform = 'translateX(400px)'
+        }
+        else{
+            isOpen = true;
+            document.getElementById('purchaseSideBar').style.transform = 'translateX(0px)'
+        }
+    }
+
+    useEffect(() => {
+            if(isOpen){
+                document.getElementById('purchaseSideBar').style.transform = 'translateX(0)'
+            }
+            else if(!isOpen){
+                document.getElementById('purchaseSideBar').style.transform = 'translateX(400px)'
+            }
+    })
 
     function CartButtonClick(){
         const productCopy = structuredClone(product);
@@ -16,7 +38,12 @@ function PurchaseSideBar({product}) {
     }
 
     return (
-        <div className={styles.purchaseSideBar}>
+        <div className={styles.purchaseSideBar} id={'purchaseSideBar'}>
+            <div className={styles.button__container}>
+                <button onClick={() => closePurchaseSidebar()}>
+                    <img src='/images/arrow.svg' width={'30px'}/>
+                </button>
+            </div>
             <div className={styles.content}>
                 <div className={styles.price__container}>
                     <h6>R$</h6>

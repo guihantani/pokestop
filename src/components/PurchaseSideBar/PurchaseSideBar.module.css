@@ -1,15 +1,29 @@
 .purchaseSideBar{
     background-color: #f6f6f6;
     height: 100vh;
-    width: 30vw;
-    position: sticky;
-    z-index: 1;
+    width: 400px;
+    position: fixed;
+    z-index: 2;
     top: 0;
     right: 0;
     display: flex;
     justify-content: right;
     align-items: center;
-    padding: 0 7vw 0 3vw;
+    padding: 0 70px 0 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button__container{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+}
+
+.button__container button{
+    border: none;
+    background-color: transparent;
 }
 
 .content{
@@ -127,4 +141,10 @@
     width: 100%;
     padding: 10px 16px;
     transition: all 0.1s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+    .button__container {
+        display: block;
+    }
 }
