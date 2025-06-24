@@ -43,3 +43,18 @@
 .input label{
     font-weight: 700;
 }
+
+@media (max-width: 960px){
+    .productForm{
+        flex-direction: column;
+        padding: 60px 0;
+    }
+
+    .productForm img{
+        width: 300px;
+    }
+
+    .form{
+        width: 90vw;
+    }
+}
