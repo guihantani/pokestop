@@ -94,11 +94,12 @@
 
 @media (max-width: 572px) {
     .section{
-        font-size: 13px;
+        font-size: 14px;
     }
 
-    .optional2{
-        display: none;
+    .optional2 img{
+        height: 65px;
+        width: 65px;
     }
 
     .table__header th{
@@ -106,5 +107,11 @@
     }
     .row td{
         padding: 20px 10px;
+    }
+}
+
+@media (max-width: 430px) {
+    .optional2{
+        display: none;
     }
 }
