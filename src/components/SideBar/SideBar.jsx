@@ -1,18 +1,45 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import styles from './SideBar.module.css'
 import { NavLink } from 'react-router-dom'
 import { ProductContext } from '../../context/ProductContext'
 
-function SideBar() {
+function SideBar({isOpen, closeMenuSideBar}) {
     const {categories, search,  setSearch} = useContext(ProductContext)
 
     const setFocus = React.useCallback(() => {
         document.getElementById("search").focus();
     })
+
+    window.addEventListener('resize', resize);
+
+    function resize() {
+        if (window.innerWidth < 950) {
+            closeMenuSideBar();
+            document.getElementById('sidebar').style.transform = 'translateX(-360px)'
+        }
+        else{
+            isOpen = true;
+            document.getElementById('sidebar').style.transform = 'translateX(0px)'
+        }
+    }
+
+    useEffect(() => {
+            if(isOpen){
+                document.getElementById('sidebar').style.transform = 'translateX(0)'
+            }
+            else if(!isOpen){
+                document.getElementById('sidebar').style.transform = 'translateX(-360px)'
+            }
+    })    
     
 
     return (
-        <div className={styles.sidebar}>
+        <div className={styles.sidebar} id={'sidebar'}>
+            <div className={styles.button__container}>
+                <button onClick={() => closeMenuSideBar()}>
+                    <img src='/images/close.svg' width={'30px'}/>
+                </button>
+            </div>
             <h1>PokeStop</h1>
             <div className={styles.search__container} onClick={setFocus}> 
                 <img src='/images/search.png' width={'36px'}/>

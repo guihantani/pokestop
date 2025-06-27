@@ -2,11 +2,12 @@
     background-color: var(--orange);
     overflow-y: scroll;
     height: 100vh;
-    width: 27vw;
-    position: sticky;
+    width: 360px;
+    position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
+    transition: transform 0.3s ease-in-out;
 }
 
 .sidebar h1{
@@ -65,4 +66,29 @@
 .active{
     border: solid 3px #71cccb !important;
     filter: brightness(120%);
+}
+
+.button__container{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px;
+}
+
+.button__container button{
+    border: none;
+    background-color: transparent;
+}
+
+@media (max-width: 949px) {
+    .button__container {
+        display: block;
+    }
+}
+
+@media (max-width: 360px) {
+    .sidebar {
+        width: 320px;
+    }
 }

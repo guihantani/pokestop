@@ -1,6 +1,7 @@
 .products{
-    padding: 125px 0 60px 0;
+    padding: 125px 0 60px 360px;
     margin: 0 auto;
+    transition: all 0.3s ease-in-out;
 }
 
 .products h1{
@@ -31,7 +32,13 @@
     }
 }
 
-@media (max-width: 920px){
+@media (max-width: 949px){
+    .products{
+        padding: 125px 0 60px 0;
+    }
+}
+
+@media (max-width: 1030px){
     .productsContainer{
         grid-template-columns: repeat(1, 1fr);
         width: 100%;

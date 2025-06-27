@@ -2,3 +2,14 @@
     display: flex;
     flex-direction: row;   
 }
+
+.button__container{
+    position: fixed;
+    left: 5vw;
+    top: 50px;
+}
+
+.button__container button{
+    border: none;
+    background-color: transparent;
+}
