@@ -61,7 +61,7 @@ function Products() {
             </button>
         </div>
           <div className={styles.container}>
-            <SideBar isOpen={sideBarIsOpen} closeMenuSideBar={closeMenuSideBar}/>
+            <SideBar isOpen={menuSideBarIsOpen} closeMenuSideBar={closeMenuSideBar}/>
             <ProductsContainer category={filteredCategory.name}/>
           </div>
         </>
