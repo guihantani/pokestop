@@ -4,6 +4,7 @@ import styles from './Products.module.css'
 import ProductsContainer from '../../components/ProductsContainer/ProductsContainer'
 import { Navigate, useParams } from 'react-router-dom';
 import { ProductContext } from '../../context/ProductContext';
+import { motion } from 'framer-motion';
 
 function Products() {
   const productPageNameContainer = useParams();
@@ -36,7 +37,11 @@ function Products() {
 
   if(productPageNameContainer.productPage == 'allproducts' && isLoadingCategories == false && isLoadingProducts == false){
     PageContent = (
-      <>
+      <motion.div 
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        exit={{opacity: 0}}      
+      >
         <div className={styles.button__container}>
             <button className={styles.button} onClick={() => openMenuSideBar()}>
               <img src='/images/menu.svg' width={'50px'}/>
@@ -46,7 +51,7 @@ function Products() {
           <SideBar isOpen={menuSideBarIsOpen} closeMenuSideBar={closeMenuSideBar}/>
           <ProductsContainer category='allproducts'/>
         </div>
-      </>
+      </motion.div>
     )
   }
   else if(filteredCategory == null && isLoadingCategories == false && isLoadingProducts == false){
@@ -54,7 +59,11 @@ function Products() {
   }
   else if(filteredCategory != null && isLoadingCategories == false && isLoadingProducts == false){
       PageContent = (
-        <>
+        <motion.div 
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          exit={{opacity: 0}}      
+        >
         <div className={styles.button__container}>
             <button className={styles.button} onClick={() => openMenuSideBar()}>
               <img src='/images/menu.svg' width={'50px'}/>
@@ -64,7 +73,7 @@ function Products() {
             <SideBar isOpen={menuSideBarIsOpen} closeMenuSideBar={closeMenuSideBar}/>
             <ProductsContainer category={filteredCategory.name}/>
           </div>
-        </>
+        </motion.div>
       )
   }
 

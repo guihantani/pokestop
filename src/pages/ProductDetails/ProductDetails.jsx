@@ -4,6 +4,7 @@ import { ProductContext } from '../../context/ProductContext';
 import PurchaseSideBar from '../../components/PurchaseSideBar/PurchaseSideBar';
 import styles from './ProductDetails.module.css'
 import BackButton from '../../components/BackButton/BackButton';
+import { motion } from 'framer-motion';
 
 function ProductDetails() {
     const productIdContainer = useParams();
@@ -62,10 +63,14 @@ function ProductDetails() {
     }
 
     return (
-        <>
+        <motion.div 
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}      
+        >
             <BackButton/>
             {PageContent}
-        </>
+        </motion.div>
     )
 }
 
