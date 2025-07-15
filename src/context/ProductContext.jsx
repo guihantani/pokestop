@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const ProductContext = createContext();
 
-const APIAdress = 'http://localhost:8000';
+const APIAdress = 'https://my-json-server.typicode.com/guihantani/mock-api';
 
 export const ProductProvider = ({children}) => {
     const [products, setProducts] = useState([]);
