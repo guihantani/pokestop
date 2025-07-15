@@ -66,11 +66,13 @@ function Products() {
           animate={{opacity: 1}}
           exit={{opacity: 0}}      
         >
-        <div className={styles.button__container}>
-            <button className={styles.button} onClick={() => openMenuSideBar()}>
-              <img src='/images/menu.svg' width={'50px'}/>
-            </button>
-        </div>
+          <div className={styles.header}>
+          </div>
+          <div className={styles.button__container}>
+              <button className={styles.button} onClick={() => openMenuSideBar()}>
+                <img src='/images/menu.svg' width={'50px'}/>
+              </button>
+          </div>
           <div className={styles.container}>
             <SideBar isOpen={menuSideBarIsOpen} closeMenuSideBar={closeMenuSideBar}/>
             <ProductsContainer category={filteredCategory.name}/>
