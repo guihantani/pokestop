@@ -24,14 +24,13 @@ function SideBar({isOpen, closeMenuSideBar}) {
     }
 
     useEffect(() => {
-            if(isOpen){
-                document.getElementById('sidebar').style.transform = 'translateX(0)'
-            }
-            else if(!isOpen){
-                document.getElementById('sidebar').style.transform = 'translateX(-360px)'
-            }
+        if(isOpen){
+            document.getElementById('sidebar').style.transform = 'translateX(0)'
+        }
+        else if(!isOpen){
+            document.getElementById('sidebar').style.transform = 'translateX(-360px)'
+        }
     })    
-    
 
     return (
         <div className={styles.sidebar} id={'sidebar'}>
